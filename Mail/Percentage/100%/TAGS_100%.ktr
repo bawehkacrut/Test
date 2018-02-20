@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>SPPID_INSTRUMENT_NA</name>
+    <name>Tags_100&#x25;</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -469,17 +469,17 @@
     </hop>
     <hop>
       <from>Dummy &#x28;do nothing&#x29;</from>
-      <to>SPPID_INSTRUMENT_NA &#x28;excel&#x29;</to>
+      <to>Tag claim 100&#x25; &#x28;excel&#x29;</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Filter null &#x28;Instrument&#x29;</from>
+      <from>Filter null &#x28;Tag_number&#x29;</from>
       <to>Abort</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Group by</from>
-      <to>Filter null &#x28;Instrument&#x29;</to>
+      <to>Filter null &#x28;Tag_number&#x29;</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -542,7 +542,7 @@
     </step>
 
   <step>
-    <name>Filter null &#x28;Instrument&#x29;</name>
+    <name>Filter null &#x28;Tag_number&#x29;</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -600,7 +600,7 @@
       <fields>
         <field>
           <aggregate>row</aggregate>
-          <subject>INSTR_TAG</subject>
+          <subject>TAG_NUMBER</subject>
           <type>COUNT_ANY</type>
           <valuefield/>
         </field>
@@ -620,7 +620,39 @@
     </step>
 
   <step>
-    <name>SPPID_INSTRUMENT_NA &#x28;excel&#x29;</name>
+    <name>Table input</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>SQLServer</connection>
+    <sql>select VW.TAG_NUMBER,VW.&#x5b;Description&#x5d;, CTDB.ATTRIBUTE_OBJECT_ID, CTDB.ATTRIBUTE_NAME,&#xd;&#xa;VW.SUPPLY, VW.DISCIPLINE, VW.TECH_ISSUER, CTDB.ATTRIBUTE_OBJECT_ID, CTDB.ATTRIBUTE_NAME&#xd;&#xa;from VW_TAGS_COMPLETENESS_ALL VW &#xd;&#xa;LEFT OUTER JOIN TXN_CTDB_MISSING CTDB&#xd;&#xa;ON VW.TAG_NUMBER &#x3d; CTDB.TAG_NUMBER&#xd;&#xa;where VW.PERCENTAGE &#x3d;100 and CTDB.ATTRIBUTE_VALIDATION_STATUS like &#x27;&#x25;missing&#x25;&#x27;&#xd;&#xa;ORDER BY VW.TAG_NUMBER, CTDB.ATTRIBUTE_OBJECT_ID&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Tag claim 100&#x25; &#x28;excel&#x29;</name>
     <type>ExcelOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -636,7 +668,7 @@
     <append>Y</append>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>&#x5c;&#x5c;psssva020&#x5c;DSR&#x5c;TEP_GPF&#x5c;DATA_MANAGEMENT&#x5c;Brilliant&#x5c;SRT Pentaho&#x5c;SPPID-INSTRUMENT-NA</name>
+      <name>&#x5c;&#x5c;psssva020&#x5c;DSR&#x5c;TEP_GPF&#x5c;DATA_MANAGEMENT&#x5c;Brilliant&#x5c;SRT Pentaho&#x5c;Claim_100&#x25;</name>
       <extention>xls</extention>
       <do_not_open_newfile_init>Y</do_not_open_newfile_init>
       <create_parent_folder>N</create_parent_folder>
@@ -687,38 +719,6 @@
     </remotesteps>
     <GUI>
       <xloc>640</xloc>
-      <yloc>192</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Table input</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>SQLServer</connection>
-    <sql>select &#x2a; from VW_REPORT_NOT_AVAILABLE_MTR_SPPID_INSTRUMENT where instr_tag not in &#x28;select tag_number from TXN_INSTRUMENT_INDEX_ALL where STATUS &#x3d; &#x27;DEL&#x27;&#x29;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>192</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
