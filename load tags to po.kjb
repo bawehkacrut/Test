@@ -288,7 +288,7 @@
    <shared_objects_file/>
   <entries>
     <entry>
-      <name>Transformation</name>
+      <name>Base Connection</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
@@ -384,7 +384,7 @@
       <yloc>160</yloc>
     </entry>
     <entry>
-      <name>Job 2</name>
+      <name>SDRL 4PM</name>
       <description/>
       <type>JOB</type>
       <specification_method>filename</specification_method>
@@ -418,7 +418,7 @@
   <hops>
     <hop>
       <from>START</from>
-      <to>Transformation</to>
+      <to>Base Connection</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -426,7 +426,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Transformation</from>
+      <from>Base Connection</from>
       <to>SDRL 11 AM</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -435,8 +435,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Transformation</from>
-      <to>Job 2</to>
+      <from>Base Connection</from>
+      <to>SDRL 4PM</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -444,7 +444,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Job 2</from>
+      <from>SDRL 4PM</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
