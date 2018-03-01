@@ -430,7 +430,7 @@
     <created_date>2018&#x2f;02&#x2f;26 13&#x3a;21&#x3a;10.137</created_date>
     <modified_user>-</modified_user>
     <modified_date>2018&#x2f;02&#x2f;26 13&#x3a;21&#x3a;10.137</modified_date>
-    <key_for_session_key/>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -464,48 +464,36 @@
   </connection>
   <order>
     <hop>
-      <from>If field value is null</from>
-      <to>Replace in string</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>txn_mtr_att_progress_rnm</from>
       <to>If field value is null</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Replace in string &#x28;attribute number to att desc&#x29;</from>
+      <to>Replace in string &#x28;remove number&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>If field value is null</from>
+      <to>Replace &#x28;, to &#x26;&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Replace &#x28;, to &#x26;&#x29;</from>
+      <to>Replace in string &#x28;attribute number to att desc&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Replace in string &#x28;remove number&#x29;</from>
+      <to>Replace in string &#x28;att desc to att_number&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Replace in string &#x28;att desc to att_number&#x29;</from>
+      <to>Table output &#x28;TXN_MTR_ATT_PROGRESS&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
-  <step>
-    <name>txn_mtr_att_progress_rnm</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>MySQL</connection>
-    <sql>select &#x2a; from txn_master_tag_register_attribute_progress_rnm</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>144</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
   <step>
     <name>If field value is null</name>
     <type>IfNull</type>
@@ -534,14 +522,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
+      <xloc>304</xloc>
       <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Replace in string</name>
+    <name>Replace &#x28;, to &#x26;&#x29;</name>
     <type>ReplaceString</type>
     <description/>
     <distribute>Y</distribute>
@@ -556,8 +544,46 @@
         <in_stream_name>ATT_REQUIRED</in_stream_name>
         <out_stream_name/>
         <use_regex>no</use_regex>
-        <replace_string>3016,</replace_string>
-        <replace_by_string>Y</replace_by_string>
+        <replace_string>,</replace_string>
+        <replace_by_string>&#x26;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Replace in string &#x28;att desc to att_number&#x29;</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>API &#x2f; ISO REFERENCE,</replace_string>
+        <replace_by_string>3016,</replace_by_string>
         <set_empty_string>N</set_empty_string>
         <replace_field_by_string/>
         <whole_word>no</whole_word>
@@ -567,13 +593,859 @@
         <in_stream_name>ATT_REQUIRED</in_stream_name>
         <out_stream_name/>
         <use_regex>no</use_regex>
-        <replace_string>,</replace_string>
-        <replace_by_string/>
+        <replace_string>CAUSE AND EFFECT DOC NO,</replace_string>
+        <replace_by_string>3142,</replace_by_string>
         <set_empty_string>N</set_empty_string>
         <replace_field_by_string/>
         <whole_word>no</whole_word>
         <case_sensitive>no</case_sensitive>
       </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>DESIGN &#x28;PURCHASER&#x29; PID DOC NO,</replace_string>
+        <replace_by_string>3144,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>FIRE AREA,</replace_string>
+        <replace_by_string>3790,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>HAZARDOUS AREA CLASSIFICATION &#x28;REQUIRED&#x29;,</replace_string>
+        <replace_by_string>46723,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>INTEGRITY LEVEL - SAFETY &#x28;SIL&#x29;,</replace_string>
+        <replace_by_string>3132,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>LAYOUT DIAGRAM DOC NO,</replace_string>
+        <replace_by_string>3140,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>LOCATION &#x28;FACILITY AREA CODE&#x29;,</replace_string>
+        <replace_by_string>3125,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>LOOP DIAGRAM DOC NO,</replace_string>
+        <replace_by_string>3149,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>OPERATING MANUAL DOC NO,</replace_string>
+        <replace_by_string>3162,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>PARENT TAG,</replace_string>
+        <replace_by_string>3130,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>PERFORMANCE STANDARD DOC NO,</replace_string>
+        <replace_by_string>34355,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>PURCHASE ORDER NO,</replace_string>
+        <replace_by_string>3131,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>SERVICE DESCRIPTION,</replace_string>
+        <replace_by_string>3133,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>SUPPLIER PID DOC NO,</replace_string>
+        <replace_by_string>3147,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>SYSTEM,</replace_string>
+        <replace_by_string>3134,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>TAG MATURITY LEVEL,</replace_string>
+        <replace_by_string>3198,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>TAG STATUS &#x28;OPERATIONAL &#x2f; VOID&#x29;,</replace_string>
+        <replace_by_string>3137,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>TERMINATION DIAGRAM DOC NO,</replace_string>
+        <replace_by_string>3151,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>WIRING DIAGRAM DOC NO,</replace_string>
+        <replace_by_string>3152,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>DETAIL DRAWING DOC NO,</replace_string>
+        <replace_by_string>3159,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>DEVICE RANGE &#x28;MAX&#x29;,</replace_string>
+        <replace_by_string>25855,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>DEVICE RANGE &#x28;MIN&#x29;,</replace_string>
+        <replace_by_string>25856,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>EQUIPMENT MODEL &#x28;SPEC&#x29;,</replace_string>
+        <replace_by_string>3123,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>GENERAL ARRANGEMENT DOC NO,</replace_string>
+        <replace_by_string>3139,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>HAZARDOUS AREA CERT AUTHORITY,</replace_string>
+        <replace_by_string>3042,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>HAZARDOUS AREA CLASSIFICATION &#x28;INSTALLED&#x29;,</replace_string>
+        <replace_by_string>3047,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>HAZARDOUS AREA GAS GROUP &#x28;INSTALLED&#x29;,</replace_string>
+        <replace_by_string>3045,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>HAZARDOUS AREA PROTECTION &#x28;INSTALLED&#x29;,</replace_string>
+        <replace_by_string>3046,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>HAZARDOUS AREA TEMPERATURE CLASS &#x28;INSTALLED&#x29;,</replace_string>
+        <replace_by_string>3048,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>MAINTENANCE INSTRUCTION MANUAL DOC NO,</replace_string>
+        <replace_by_string>3161,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>MANUFACTURER,</replace_string>
+        <replace_by_string>3127,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>ORIFICE SIZE,</replace_string>
+        <replace_by_string>3067,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>SERIAL NUMBER,</replace_string>
+        <replace_by_string>3088,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>SUPPLIER DATASHEET DOC NO,</replace_string>
+        <replace_by_string>3157,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>VALVE BORE &#x28;INSTALLED&#x29;,</replace_string>
+        <replace_by_string>3107,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>VALVE SEAT MATERIAL,</replace_string>
+        <replace_by_string>32088,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>688</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Replace in string &#x28;attribute number to att desc&#x29;</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3016&#x26;</replace_string>
+        <replace_by_string>API &#x2f; ISO REFERENCE,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3142&#x26;</replace_string>
+        <replace_by_string>CAUSE AND EFFECT DOC NO,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3144&#x26;</replace_string>
+        <replace_by_string>DESIGN &#x28;PURCHASER&#x29; PID DOC NO,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3790&#x26;</replace_string>
+        <replace_by_string>FIRE AREA,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>46723&#x26;</replace_string>
+        <replace_by_string>HAZARDOUS AREA CLASSIFICATION &#x28;REQUIRED&#x29;,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3132&#x26;</replace_string>
+        <replace_by_string>INTEGRITY LEVEL - SAFETY &#x28;SIL&#x29;,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3140&#x26;</replace_string>
+        <replace_by_string>LAYOUT DIAGRAM DOC NO,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3125&#x26;</replace_string>
+        <replace_by_string>LOCATION &#x28;FACILITY AREA CODE&#x29;,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3149&#x26;</replace_string>
+        <replace_by_string>LOOP DIAGRAM DOC NO,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3162&#x26;</replace_string>
+        <replace_by_string>OPERATING MANUAL DOC NO,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3130&#x26;</replace_string>
+        <replace_by_string>PARENT TAG,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>34355&#x26;</replace_string>
+        <replace_by_string>PERFORMANCE STANDARD DOC NO,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3131&#x26;</replace_string>
+        <replace_by_string>PURCHASE ORDER NO,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3133&#x26;</replace_string>
+        <replace_by_string>SERVICE DESCRIPTION,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3147&#x26;</replace_string>
+        <replace_by_string>SUPPLIER PID DOC NO,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3134&#x26;</replace_string>
+        <replace_by_string>SYSTEM,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3198&#x26;</replace_string>
+        <replace_by_string>TAG MATURITY LEVEL,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3137&#x26;</replace_string>
+        <replace_by_string>TAG STATUS &#x28;OPERATIONAL &#x2f; VOID&#x29;,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3151&#x26;</replace_string>
+        <replace_by_string>TERMINATION DIAGRAM DOC NO,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3152&#x26;</replace_string>
+        <replace_by_string>WIRING DIAGRAM DOC NO,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3159&#x26;</replace_string>
+        <replace_by_string>DETAIL DRAWING DOC NO,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>25855&#x26;</replace_string>
+        <replace_by_string>DEVICE RANGE &#x28;MAX&#x29;,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>25856&#x26;</replace_string>
+        <replace_by_string>DEVICE RANGE &#x28;MIN&#x29;,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3123&#x26;</replace_string>
+        <replace_by_string>EQUIPMENT MODEL &#x28;SPEC&#x29;,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3139&#x26;</replace_string>
+        <replace_by_string>GENERAL ARRANGEMENT DOC NO,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3042&#x26;</replace_string>
+        <replace_by_string>HAZARDOUS AREA CERT AUTHORITY,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3047&#x26;</replace_string>
+        <replace_by_string>HAZARDOUS AREA CLASSIFICATION &#x28;INSTALLED&#x29;,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3045&#x26;</replace_string>
+        <replace_by_string>HAZARDOUS AREA GAS GROUP &#x28;INSTALLED&#x29;,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3046&#x26;</replace_string>
+        <replace_by_string>HAZARDOUS AREA PROTECTION &#x28;INSTALLED&#x29;,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3048&#x26;</replace_string>
+        <replace_by_string>HAZARDOUS AREA TEMPERATURE CLASS &#x28;INSTALLED&#x29;,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3161&#x26;</replace_string>
+        <replace_by_string>MAINTENANCE INSTRUCTION MANUAL DOC NO,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3127&#x26;</replace_string>
+        <replace_by_string>MANUFACTURER,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3067&#x26;</replace_string>
+        <replace_by_string>ORIFICE SIZE,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3088&#x26;</replace_string>
+        <replace_by_string>SERIAL NUMBER,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3157&#x26;</replace_string>
+        <replace_by_string>SUPPLIER DATASHEET DOC NO,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>3107&#x26;</replace_string>
+        <replace_by_string>VALVE BORE &#x28;INSTALLED&#x29;,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>32088&#x26;</replace_string>
+        <replace_by_string>VALVE SEAT MATERIAL,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>688</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Replace in string &#x28;remove number&#x29;</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
       <field>
         <in_stream_name>ATT_REQUIRED</in_stream_name>
         <out_stream_name/>
@@ -684,6 +1556,17 @@
         <whole_word>no</whole_word>
         <case_sensitive>no</case_sensitive>
       </field>
+      <field>
+        <in_stream_name>ATT_REQUIRED</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>&#x26;</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -693,7 +1576,247 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
+      <xloc>416</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Table output &#x28;TXN_MTR_ATT_PROGRESS&#x29;</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>MySQL</connection>
+    <schema/>
+    <table>txn_master_tag_register_attribute_progress_rnm</table>
+    <commit>20000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>TAG_NUMBER</column_name>
+          <stream_name>TAG_NUMBER</stream_name>
+        </field>
+        <field>
+          <column_name>FUNCTIONAL_CLASS</column_name>
+          <stream_name>FUNCTIONAL_CLASS</stream_name>
+        </field>
+        <field>
+          <column_name>PHYSICAL_CLASS</column_name>
+          <stream_name>PHYSICAL_CLASS</stream_name>
+        </field>
+        <field>
+          <column_name>ATT_REQUIRED</column_name>
+          <stream_name>ATT_REQUIRED</stream_name>
+        </field>
+        <field>
+          <column_name>B_3016</column_name>
+          <stream_name>B_3016</stream_name>
+        </field>
+        <field>
+          <column_name>B_3142</column_name>
+          <stream_name>B_3142</stream_name>
+        </field>
+        <field>
+          <column_name>B_3144</column_name>
+          <stream_name>B_3144</stream_name>
+        </field>
+        <field>
+          <column_name>B_3790</column_name>
+          <stream_name>B_3790</stream_name>
+        </field>
+        <field>
+          <column_name>B_46723</column_name>
+          <stream_name>B_46723</stream_name>
+        </field>
+        <field>
+          <column_name>B_3132</column_name>
+          <stream_name>B_3132</stream_name>
+        </field>
+        <field>
+          <column_name>B_3140</column_name>
+          <stream_name>B_3140</stream_name>
+        </field>
+        <field>
+          <column_name>B_3125</column_name>
+          <stream_name>B_3125</stream_name>
+        </field>
+        <field>
+          <column_name>B_3149</column_name>
+          <stream_name>B_3149</stream_name>
+        </field>
+        <field>
+          <column_name>B_3162</column_name>
+          <stream_name>B_3162</stream_name>
+        </field>
+        <field>
+          <column_name>B_3130</column_name>
+          <stream_name>B_3130</stream_name>
+        </field>
+        <field>
+          <column_name>B_34355</column_name>
+          <stream_name>B_34355</stream_name>
+        </field>
+        <field>
+          <column_name>B_3131</column_name>
+          <stream_name>B_3131</stream_name>
+        </field>
+        <field>
+          <column_name>B_3133</column_name>
+          <stream_name>B_3133</stream_name>
+        </field>
+        <field>
+          <column_name>B_3147</column_name>
+          <stream_name>B_3147</stream_name>
+        </field>
+        <field>
+          <column_name>B_3134</column_name>
+          <stream_name>B_3134</stream_name>
+        </field>
+        <field>
+          <column_name>B_3198</column_name>
+          <stream_name>B_3198</stream_name>
+        </field>
+        <field>
+          <column_name>B_3137</column_name>
+          <stream_name>B_3137</stream_name>
+        </field>
+        <field>
+          <column_name>B_3151</column_name>
+          <stream_name>B_3151</stream_name>
+        </field>
+        <field>
+          <column_name>B_3152</column_name>
+          <stream_name>B_3152</stream_name>
+        </field>
+        <field>
+          <column_name>B_3159</column_name>
+          <stream_name>B_3159</stream_name>
+        </field>
+        <field>
+          <column_name>B_25855</column_name>
+          <stream_name>B_25855</stream_name>
+        </field>
+        <field>
+          <column_name>B_25856</column_name>
+          <stream_name>B_25856</stream_name>
+        </field>
+        <field>
+          <column_name>B_3123</column_name>
+          <stream_name>B_3123</stream_name>
+        </field>
+        <field>
+          <column_name>B_3139</column_name>
+          <stream_name>B_3139</stream_name>
+        </field>
+        <field>
+          <column_name>B_3042</column_name>
+          <stream_name>B_3042</stream_name>
+        </field>
+        <field>
+          <column_name>B_3047</column_name>
+          <stream_name>B_3047</stream_name>
+        </field>
+        <field>
+          <column_name>B_3045</column_name>
+          <stream_name>B_3045</stream_name>
+        </field>
+        <field>
+          <column_name>B_3046</column_name>
+          <stream_name>B_3046</stream_name>
+        </field>
+        <field>
+          <column_name>B_3048</column_name>
+          <stream_name>B_3048</stream_name>
+        </field>
+        <field>
+          <column_name>B_3161</column_name>
+          <stream_name>B_3161</stream_name>
+        </field>
+        <field>
+          <column_name>B_3127</column_name>
+          <stream_name>B_3127</stream_name>
+        </field>
+        <field>
+          <column_name>B_3067</column_name>
+          <stream_name>B_3067</stream_name>
+        </field>
+        <field>
+          <column_name>B_3088</column_name>
+          <stream_name>B_3088</stream_name>
+        </field>
+        <field>
+          <column_name>B_3157</column_name>
+          <stream_name>B_3157</stream_name>
+        </field>
+        <field>
+          <column_name>B_3107</column_name>
+          <stream_name>B_3107</stream_name>
+        </field>
+        <field>
+          <column_name>B_32088</column_name>
+          <stream_name>B_32088</stream_name>
+        </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>688</xloc>
+      <yloc>384</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>txn_mtr_att_progress_rnm</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>MySQL</connection>
+    <sql>select &#x2a; from txn_master_tag_register_attribute_progress_rnm</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
       <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
