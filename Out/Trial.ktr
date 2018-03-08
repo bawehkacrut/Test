@@ -1151,7 +1151,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1136</xloc>
+      <xloc>1120</xloc>
       <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1169,75 +1169,145 @@
       <schema_name/>
     </partitioning>
     <fields>      <field>        <name>ID</name>
+        <rename/>
       </field>      <field>        <name>Document_ID_Number</name>
+        <rename/>
       </field>      <field>        <name>Client_Document_ID</name>
-      </field>      <field>        <name>Vendor_Document_ID</name>
+        <rename/>
       </field>      <field>        <name>Rev</name>
+        <rename/>
       </field>      <field>        <name>Issuing_Description</name>
+        <rename/>
       </field>      <field>        <name>Status</name>
+        <rename/>
       </field>      <field>        <name>Title</name>
+        <rename/>
       </field>      <field>        <name>Second_Title</name>
+        <rename/>
+      </field>      <field>        <name>Discipline</name>
+        <rename/>
       </field>      <field>        <name>Document_Type</name>
-      </field>      <field>        <name>Relevant_For_Client_Progress</name>
-      </field>      <field>        <name>Relevant_for_Project_Progress</name>
-      </field>      <field>        <name>EMC</name>
-      </field>      <field>        <name>Plant_Unit</name>
-      </field>      <field>        <name>On_Hold</name>
-      </field>      <field>        <name>On_Hold_Comment</name>
-      </field>      <field>        <name>Ready_for_Handover</name>
-      </field>      <field>        <name>Distribution_Code</name>
-      </field>      <field>        <name>Function</name>
-      </field>      <field>        <name>Department</name>
-      </field>      <field>        <name>Asset_Name</name>
-      </field>      <field>        <name>Free_Attribute_1</name>
-      </field>      <field>        <name>Free_Attribute_2</name>
-      </field>      <field>        <name>Free_Attribute_3</name>
+        <rename/>
       </field>      <field>        <name>Iss_Dept</name>
+        <rename/>
       </field>      <field>        <name>Man_Dept</name>
+        <rename/>
       </field>      <field>        <name>Client_Review_Category</name>
+        <rename/>
       </field>      <field>        <name>Certifying_Body_Action</name>
+        <rename/>
       </field>      <field>        <name>Originator</name>
+        <rename/>
       </field>      <field>        <name>Incoming_VEN_Date</name>
+        <rename/>
       </field>      <field>        <name>Incoming_VEN_Number</name>
+        <rename/>
       </field>      <field>        <name>Incoming_VEN_Due_Date</name>
+        <rename/>
       </field>      <field>        <name>Next_Emission_Date</name>
+        <rename/>
       </field>      <field>        <name>Overdue_Vendor</name>
+        <rename/>
       </field>      <field>        <name>Delay_Vendor</name>
+        <rename/>
       </field>      <field>        <name>Saipem_Answer_to_Vendor</name>
+        <rename/>
       </field>      <field>        <name>Outgoing_VEN_Date</name>
+        <rename/>
       </field>      <field>        <name>Outgoing_VEN_Number</name>
+        <rename/>
       </field>      <field>        <name>Outgoing_VEN_Due_Date</name>
+        <rename/>
       </field>      <field>        <name>Overdue_CTR</name>
+        <rename/>
       </field>      <field>        <name>Delay_CTR</name>
+        <rename/>
       </field>      <field>        <name>Client_Answer</name>
+        <rename/>
       </field>      <field>        <name>Outgoing_CPY_Number</name>
+        <rename/>
       </field>      <field>        <name>Outgoing_CPY_Date</name>
+        <rename/>
       </field>      <field>        <name>Issuing_Reason</name>
+        <rename/>
       </field>      <field>        <name>Outgoing_CPY_Due_Date</name>
+        <rename/>
       </field>      <field>        <name>Incoming_CPY_Number</name>
+        <rename/>
       </field>      <field>        <name>Incoming_CPY_Date</name>
+        <rename/>
       </field>      <field>        <name>Overdue_CPY</name>
+        <rename/>
       </field>      <field>        <name>Delay_CPY</name>
+        <rename/>
       </field>      <field>        <name>Last_CPY_Answer</name>
+        <rename/>
       </field>      <field>        <name>Last_CTR_Answer</name>
+        <rename/>
       </field>      <field>        <name>Weight</name>
+        <rename/>
       </field>      <field>        <name>Activity</name>
+        <rename/>
       </field>      <field>        <name>Progress_Template</name>
+        <rename/>
       </field>      <field>        <name>IFR_Planned</name>
+        <rename/>
       </field>      <field>        <name>IFR_Actual</name>
+        <rename/>
       </field>      <field>        <name>IFR_Forecast</name>
+        <rename/>
       </field>      <field>        <name>FIN_Planned</name>
+        <rename/>
       </field>      <field>        <name>FIN_Actual</name>
+        <rename/>
       </field>      <field>        <name>FIN_Forecast</name>
+        <rename/>
       </field>      <field>        <name>FDB_Planned</name>
+        <rename/>
       </field>      <field>        <name>FDB_Actual</name>
+        <rename/>
       </field>      <field>        <name>FDB_Forecast</name>
+        <rename/>
       </field>      <field>        <name>Planned_Progress</name>
+        <rename/>
       </field>      <field>        <name>Actual_Progress</name>
+        <rename/>
       </field>      <field>        <name>Forecasted_Progress</name>
+        <rename/>
       </field>      <field>        <name>Actual_Status</name>
+        <rename/>
+      </field>      <field>        <name>Relevant_For_Client_Progress</name>
+        <rename/>
+      </field>      <field>        <name>Relevant_for_Project_Progress</name>
+        <rename/>
+      </field>      <field>        <name>EMC</name>
+        <rename/>
+      </field>      <field>        <name>Plant_Unit</name>
+        <rename/>
+      </field>      <field>        <name>On_Hold</name>
+        <rename/>
+      </field>      <field>        <name>On_Hold_Comment</name>
+        <rename/>
+      </field>      <field>        <name>Ready_for_Handover</name>
+        <rename/>
+      </field>      <field>        <name>Distribution_Code</name>
+        <rename/>
+      </field>      <field>        <name>Function</name>
+        <rename/>
+      </field>      <field>        <name>Department</name>
+        <rename/>
+      </field>      <field>        <name>Asset_Name</name>
+        <rename/>
+      </field>      <field>        <name>Free_Attribute_1</name>
+        <rename/>
+      </field>      <field>        <name>Free_Attribute_2</name>
+        <rename/>
+      </field>      <field>        <name>Free_Attribute_3</name>
+        <rename/>
       </field>      <field>        <name>CreatedAt</name>
+        <rename/>
       </field>      <field>        <name>system_info</name>
+        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>ID</name>
         <rename>ID</rename>
@@ -1257,7 +1327,7 @@
       </meta>      <meta>        <name>Document_ID_Number</name>
         <rename>Document_ID_Number</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1272,22 +1342,7 @@
       </meta>      <meta>        <name>Client_Document_ID</name>
         <rename>Client_Document_ID</rename>
         <type>None</type>
-        <length>50</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Vendor_Document_ID</name>
-        <rename>Vendor_Document_ID</rename>
-        <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1302,7 +1357,7 @@
       </meta>      <meta>        <name>Rev</name>
         <rename>Rev</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1317,7 +1372,7 @@
       </meta>      <meta>        <name>Issuing_Description</name>
         <rename>Issuing_Description</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1332,7 +1387,7 @@
       </meta>      <meta>        <name>Status</name>
         <rename>Status</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1362,7 +1417,22 @@
       </meta>      <meta>        <name>Second_Title</name>
         <rename>Second_Title</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Discipline</name>
+        <rename>Discipline</rename>
+        <type>None</type>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1377,217 +1447,7 @@
       </meta>      <meta>        <name>Document_Type</name>
         <rename>Document_Type</rename>
         <type>None</type>
-        <length>50</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Relevant_For_Client_Progress</name>
-        <rename>Relevant_For_Client_Progress</rename>
-        <type>None</type>
-        <length>50</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Relevant_for_Project_Progress</name>
-        <rename>Relevant_for_Project_Progress</rename>
-        <type>None</type>
-        <length>50</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>EMC</name>
-        <rename>EMC</rename>
-        <type>None</type>
-        <length>50</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Plant_Unit</name>
-        <rename>Plant_Unit</rename>
-        <type>None</type>
-        <length>50</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>On_Hold</name>
-        <rename>On_Hold</rename>
-        <type>None</type>
-        <length>50</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>On_Hold_Comment</name>
-        <rename>On_Hold_Comment</rename>
-        <type>None</type>
-        <length>50</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Ready_for_Handover</name>
-        <rename>Ready_for_Handover</rename>
-        <type>None</type>
-        <length>50</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Distribution_Code</name>
-        <rename>Distribution_Code</rename>
-        <type>None</type>
-        <length>50</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Function</name>
-        <rename>Function</rename>
-        <type>None</type>
-        <length>50</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Department</name>
-        <rename>Department</rename>
-        <type>None</type>
-        <length>50</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Asset_Name</name>
-        <rename>Asset_Name</rename>
-        <type>None</type>
-        <length>50</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Free_Attribute_1</name>
-        <rename>Free_Attribute_1</rename>
-        <type>None</type>
-        <length>50</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Free_Attribute_2</name>
-        <rename>Free_Attribute_2</rename>
-        <type>None</type>
-        <length>50</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Free_Attribute_3</name>
-        <rename>Free_Attribute_3</rename>
-        <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1602,7 +1462,7 @@
       </meta>      <meta>        <name>Iss_Dept</name>
         <rename>Iss_Dept</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1617,7 +1477,7 @@
       </meta>      <meta>        <name>Man_Dept</name>
         <rename>Man_Dept</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1632,7 +1492,7 @@
       </meta>      <meta>        <name>Client_Review_Category</name>
         <rename>Client_Review_Category</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1647,7 +1507,7 @@
       </meta>      <meta>        <name>Certifying_Body_Action</name>
         <rename>Certifying_Body_Action</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1662,7 +1522,7 @@
       </meta>      <meta>        <name>Originator</name>
         <rename>Originator</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1677,7 +1537,7 @@
       </meta>      <meta>        <name>Incoming_VEN_Date</name>
         <rename>Incoming_VEN_Date</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1737,7 +1597,7 @@
       </meta>      <meta>        <name>Overdue_Vendor</name>
         <rename>Overdue_Vendor</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1752,7 +1612,7 @@
       </meta>      <meta>        <name>Delay_Vendor</name>
         <rename>Delay_Vendor</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1767,7 +1627,7 @@
       </meta>      <meta>        <name>Saipem_Answer_to_Vendor</name>
         <rename>Saipem_Answer_to_Vendor</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1782,7 +1642,7 @@
       </meta>      <meta>        <name>Outgoing_VEN_Date</name>
         <rename>Outgoing_VEN_Date</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1797,7 +1657,7 @@
       </meta>      <meta>        <name>Outgoing_VEN_Number</name>
         <rename>Outgoing_VEN_Number</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1812,7 +1672,7 @@
       </meta>      <meta>        <name>Outgoing_VEN_Due_Date</name>
         <rename>Outgoing_VEN_Due_Date</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1827,7 +1687,7 @@
       </meta>      <meta>        <name>Overdue_CTR</name>
         <rename>Overdue_CTR</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1842,7 +1702,7 @@
       </meta>      <meta>        <name>Delay_CTR</name>
         <rename>Delay_CTR</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1857,7 +1717,7 @@
       </meta>      <meta>        <name>Client_Answer</name>
         <rename>Client_Answer</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1872,7 +1732,7 @@
       </meta>      <meta>        <name>Outgoing_CPY_Number</name>
         <rename>Outgoing_CPY_Number</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1887,7 +1747,7 @@
       </meta>      <meta>        <name>Outgoing_CPY_Date</name>
         <rename>Outgoing_CPY_Date</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1902,7 +1762,7 @@
       </meta>      <meta>        <name>Issuing_Reason</name>
         <rename>Issuing_Reason</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1917,7 +1777,7 @@
       </meta>      <meta>        <name>Outgoing_CPY_Due_Date</name>
         <rename>Outgoing_CPY_Due_Date</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1932,7 +1792,7 @@
       </meta>      <meta>        <name>Incoming_CPY_Number</name>
         <rename>Incoming_CPY_Number</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1947,7 +1807,7 @@
       </meta>      <meta>        <name>Incoming_CPY_Date</name>
         <rename>Incoming_CPY_Date</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1962,7 +1822,7 @@
       </meta>      <meta>        <name>Overdue_CPY</name>
         <rename>Overdue_CPY</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1977,7 +1837,7 @@
       </meta>      <meta>        <name>Delay_CPY</name>
         <rename>Delay_CPY</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1992,7 +1852,7 @@
       </meta>      <meta>        <name>Last_CPY_Answer</name>
         <rename>Last_CPY_Answer</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2007,7 +1867,7 @@
       </meta>      <meta>        <name>Last_CTR_Answer</name>
         <rename>Last_CTR_Answer</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2022,7 +1882,7 @@
       </meta>      <meta>        <name>Weight</name>
         <rename>Weight</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2037,7 +1897,7 @@
       </meta>      <meta>        <name>Activity</name>
         <rename>Activity</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2052,7 +1912,7 @@
       </meta>      <meta>        <name>Progress_Template</name>
         <rename>Progress_Template</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2067,7 +1927,7 @@
       </meta>      <meta>        <name>IFR_Planned</name>
         <rename>IFR_Planned</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2082,7 +1942,7 @@
       </meta>      <meta>        <name>IFR_Actual</name>
         <rename>IFR_Actual</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2097,7 +1957,7 @@
       </meta>      <meta>        <name>IFR_Forecast</name>
         <rename>IFR_Forecast</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2112,7 +1972,7 @@
       </meta>      <meta>        <name>FIN_Planned</name>
         <rename>FIN_Planned</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2127,7 +1987,7 @@
       </meta>      <meta>        <name>FIN_Actual</name>
         <rename>FIN_Actual</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2142,7 +2002,7 @@
       </meta>      <meta>        <name>FIN_Forecast</name>
         <rename>FIN_Forecast</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2157,7 +2017,7 @@
       </meta>      <meta>        <name>FDB_Planned</name>
         <rename>FDB_Planned</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2172,7 +2032,7 @@
       </meta>      <meta>        <name>FDB_Actual</name>
         <rename>FDB_Actual</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2187,7 +2047,7 @@
       </meta>      <meta>        <name>FDB_Forecast</name>
         <rename>FDB_Forecast</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2202,7 +2062,7 @@
       </meta>      <meta>        <name>Planned_Progress</name>
         <rename>Planned_Progress</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2217,7 +2077,7 @@
       </meta>      <meta>        <name>Actual_Progress</name>
         <rename>Actual_Progress</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2232,7 +2092,7 @@
       </meta>      <meta>        <name>Forecasted_Progress</name>
         <rename>Forecasted_Progress</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2247,7 +2107,217 @@
       </meta>      <meta>        <name>Actual_Status</name>
         <rename>Actual_Status</rename>
         <type>None</type>
-        <length>50</length>
+        <length>500</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Relevant_For_Client_Progress</name>
+        <rename>Relevant_For_Client_Progress</rename>
+        <type>None</type>
+        <length>500</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Relevant_for_Project_Progress</name>
+        <rename>Relevant_for_Project_Progress</rename>
+        <type>None</type>
+        <length>500</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>EMC</name>
+        <rename>EMC</rename>
+        <type>None</type>
+        <length>500</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Plant_Unit</name>
+        <rename>Plant_Unit</rename>
+        <type>None</type>
+        <length>500</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>On_Hold</name>
+        <rename>On_Hold</rename>
+        <type>None</type>
+        <length>500</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>On_Hold_Comment</name>
+        <rename>On_Hold_Comment</rename>
+        <type>None</type>
+        <length>500</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Ready_for_Handover</name>
+        <rename>Ready_for_Handover</rename>
+        <type>None</type>
+        <length>500</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Distribution_Code</name>
+        <rename>Distribution_Code</rename>
+        <type>None</type>
+        <length>500</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Function</name>
+        <rename>Function</rename>
+        <type>None</type>
+        <length>500</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Department</name>
+        <rename>Department</rename>
+        <type>None</type>
+        <length>500</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Asset_Name</name>
+        <rename>Asset_Name</rename>
+        <type>None</type>
+        <length>500</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Free_Attribute_1</name>
+        <rename>Free_Attribute_1</rename>
+        <type>None</type>
+        <length>500</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Free_Attribute_2</name>
+        <rename>Free_Attribute_2</rename>
+        <type>None</type>
+        <length>500</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Free_Attribute_3</name>
+        <rename>Free_Attribute_3</rename>
+        <type>None</type>
+        <length>500</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2276,10 +2346,10 @@
         <storage_type/>
       </meta>      <meta>        <name>system_info</name>
         <rename>system_info</rename>
-        <type>Date</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
-        <conversion_mask>yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS</conversion_mask>
+        <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
         <date_format_locale/>
         <date_format_timezone/>
