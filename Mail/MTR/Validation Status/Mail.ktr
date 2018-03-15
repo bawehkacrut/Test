@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>LoadtoMYSQL</name>
+    <name>Mail</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,91 +427,24 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2018&#x2f;03&#x2f;07 14&#x3a;06&#x3a;23.828</created_date>
+    <created_date>2017&#x2f;10&#x2f;10 15&#x3a;44&#x3a;00.883</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018&#x2f;03&#x2f;07 14&#x3a;06&#x3a;23.828</modified_date>
+    <modified_date>2017&#x2f;10&#x2f;10 15&#x3a;44&#x3a;00.883</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
-  <connection>
-    <name>MYSQL012</name>
-    <server>PSSSVA012</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>TEP_GPF</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted 2be98afc86aa7a185a209ab7d8cc2fe8a</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>SQLServer</name>
-    <server>PSSSVA020</server>
-    <type>MSSQL</type>
-    <access>Native</access>
-    <database>TEP_GPF</database>
-    <port>1433</port>
-    <username>datamanagement</username>
-    <password>Encrypted 2be98afc86af4c6d5bb4aa3228ec3ff9b</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
   <order>
     <hop>
-      <from>Table input &#x28;RPT_RNM&#x29; SQL Server</from>
-      <to>Dummy &#x28;do nothing&#x29;</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Concat Fields</from>
-      <to>Sort Date</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort Date</from>
-      <to>Table output &#x28;rpt summary MYSQL&#x29;</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Dummy &#x28;do nothing&#x29;</from>
-      <to>Concat Fields</to>
+      <from>Data Grid</from>
+      <to>Mail</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Concat Fields</name>
-    <type>ConcatFields</type>
+    <name>Data Grid</name>
+    <type>DataGrid</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -520,255 +453,88 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <separator>-</separator>
-    <enclosure/>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>N</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <compression>None</compression>
-    <encoding/>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField/>
-    <create_parent_folder>Y</create_parent_folder>
-    <file>
-      <name>file</name>
-      <is_command>N</is_command>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention>txt</extention>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery>0</splitevery>
-    </file>
     <fields>
       <field>
-        <name>YearTR</name>
+        <name>Email</name>
         <type>String</type>
-        <format>&#x23;</format>
+        <format/>
         <currency/>
         <decimal/>
         <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>4</length>
+        <length>5000</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
-        <name>MonthTR</name>
+        <name>CC</name>
         <type>String</type>
-        <format>&#x23;</format>
+        <format/>
         <currency/>
         <decimal/>
         <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>2</length>
+        <length>1000</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
-        <name>DayTR</name>
+        <name>Email_sender</name>
         <type>String</type>
-        <format>&#x23;</format>
+        <format/>
         <currency/>
         <decimal/>
         <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>2</length>
+        <length>50</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
-    </fields>
-    <ConcatFields>
-<targetFieldName>DATE</targetFieldName>
-<targetFieldLength>0</targetFieldLength>
-<removeSelectedFields>N</removeSelectedFields>
-    </ConcatFields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>592</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Dummy &#x28;do nothing&#x29;</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>432</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Table input &#x28;RPT_RNM&#x29; SQL Server</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>SQLServer</connection>
-    <sql>select &#x2a; from VW_RNM_SUMMARY</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>240</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Table output &#x28;rpt summary MYSQL&#x29;</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>MYSQL012</connection>
-    <schema/>
-    <table>RPT_RNM_SUMMARY</table>
-    <commit>10000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-        <field>
-          <column_name>ATTRIBUTE</column_name>
-          <stream_name>ATTRIBUTE</stream_name>
-        </field>
-        <field>
-          <column_name>ATTRIBUTE_NAME</column_name>
-          <stream_name>ATTRIBUTE_NAME</stream_name>
-        </field>
-        <field>
-          <column_name>DESC</column_name>
-          <stream_name>DESC</stream_name>
-        </field>
-        <field>
-          <column_name>DATE</column_name>
-          <stream_name>DATE</stream_name>
-        </field>
-        <field>
-          <column_name>MISSING</column_name>
-          <stream_name>Missing</stream_name>
-        </field>
-        <field>
-          <column_name>INVALID</column_name>
-          <stream_name>Invalid</stream_name>
-        </field>
-        <field>
-          <column_name>VALID</column_name>
-          <stream_name>Valid</stream_name>
-        </field>
-        <field>
-          <column_name>REQUIRED</column_name>
-          <stream_name>Required</stream_name>
-        </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>864</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Sort Date</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
-    <fields>
       <field>
-        <name>DATE</name>
-        <ascending>Y</ascending>
-        <case_sensitive>Y</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
+        <name>server</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>50</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>port</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>50</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Subject</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>1000</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>comment</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>1000</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
     </fields>
+    <data>
+      <line> <item>Muhammad.brilliantsubaweh.guest&#x40;saipem.com, Akhmad.BAIHAQY&#x40;saipem.com, Nurfadhila.Elqolby.guest&#x40;saipem.com</item><item/><item>TEPGPF.NoReply.Jakarta&#x40;saipem.com</item><item>PSSSVA014</item><item>25</item><item>&#x5b;TEP Offshore&#x5d; Reminder&#x21; Validation Status CTDB, Need Revise</item><item>&#x3c;p&#x3e;Dear Data Management Team,&#x3c;&#x2f;p&#x3e;&#x3c;p&#x3e;Please find attached file for tags with validation status in CTDB, kindly revise ASAP.&#x3c;&#x2f;br&#x3e;&#x3c;p&#x3e;Thank You.&#x3c;&#x2f;p&#x3e;&#x3c;p&#x3e;Best Regards&#x3c;&#x2f;p&#x3e;</item> </line>
+    </data>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -777,8 +543,75 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
-      <yloc>256</yloc>
+      <xloc>256</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Mail</name>
+    <type>Mail</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <server>server</server>
+      <port>port</port>
+      <destination>Email</destination>
+      <destinationCc>CC</destinationCc>
+      <destinationBCc/>
+      <replyToAddresses/>
+      <replyto>Email_sender</replyto>
+      <replytoname>Email_sender</replytoname>
+      <subject>Subject</subject>
+      <include_date>N</include_date>
+      <include_subfolders>N</include_subfolders>
+      <zipFilenameDynamic>N</zipFilenameDynamic>
+      <isFilenameDynamic>N</isFilenameDynamic>
+      <attachContentFromField>N</attachContentFromField>
+      <attachContentField/>
+      <attachContentFileNameField/>
+      <dynamicFieldname/>
+      <dynamicWildcard/>
+      <dynamicZipFilename/>
+      <sourcefilefoldername>&#x5c;&#x5c;psssva020&#x5c;DSR&#x5c;TEP_GPF&#x5c;DATA_MANAGEMENT&#x5c;Brilliant&#x5c;SRT Pentaho&#x5c;Validation_status.xls</sourcefilefoldername>
+      <sourcewildcard/>
+      <contact_person/>
+      <contact_phone/>
+      <comment>comment</comment>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <zip_limit_size>0</zip_limit_size>
+      <use_auth>N</use_auth>
+      <use_secure_auth>N</use_secure_auth>
+      <auth_user/>
+      <auth_password>Encrypted </auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>Y</use_HTML>
+      <use_Priority>N</use_Priority>
+    <encoding>UTF-8</encoding>
+    <priority>normal</priority>
+    <importance>normal</importance>
+    <sensitivity>normal</sensitivity>
+    <secureconnectiontype>SSL</secureconnectiontype>
+      <embeddedimages>
+      </embeddedimages>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>384</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>LoadtoMYSQL</name>
+    <name>DOCUMENT_NUMBER _WRONG</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>&#x2f;</directory>
     <parameters>
     </parameters>
@@ -427,47 +428,20 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2018&#x2f;03&#x2f;07 14&#x3a;06&#x3a;23.828</created_date>
+    <created_date>2017&#x2f;10&#x2f;10 15&#x3a;23&#x3a;24.556</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018&#x2f;03&#x2f;07 14&#x3a;06&#x3a;23.828</modified_date>
+    <modified_date>2017&#x2f;10&#x2f;10 15&#x3a;23&#x3a;24.556</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>MYSQL012</name>
-    <server>PSSSVA012</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>TEP_GPF</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted 2be98afc86aa7a185a209ab7d8cc2fe8a</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
     <name>SQLServer</name>
     <server>PSSSVA020</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>TEP_GPF</database>
+    <database>tep_gpf</database>
     <port>1433</port>
     <username>datamanagement</username>
     <password>Encrypted 2be98afc86af4c6d5bb4aa3228ec3ff9b</password>
@@ -489,29 +463,34 @@
   </connection>
   <order>
     <hop>
-      <from>Table input &#x28;RPT_RNM&#x29; SQL Server</from>
+      <from>Document Number &#x28;MTR&#x29;</from>
       <to>Dummy &#x28;do nothing&#x29;</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Concat Fields</from>
-      <to>Sort Date</to>
+      <from>Dummy &#x28;do nothing&#x29;</from>
+      <to>Document Number Wrong &#x28;excel&#x29;</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Sort Date</from>
-      <to>Table output &#x28;rpt summary MYSQL&#x29;</to>
+      <from>Filter null &#x28;Attribute&#x29;</from>
+      <to>Abort</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Group by</from>
+      <to>Filter null &#x28;Attribute&#x29;</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Dummy &#x28;do nothing&#x29;</from>
-      <to>Concat Fields</to>
+      <to>Group by</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Concat Fields</name>
-    <type>ConcatFields</type>
+    <name>Abort</name>
+    <type>Abort</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -520,80 +499,9 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <separator>-</separator>
-    <enclosure/>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>N</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <compression>None</compression>
-    <encoding/>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField/>
-    <create_parent_folder>Y</create_parent_folder>
-    <file>
-      <name>file</name>
-      <is_command>N</is_command>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention>txt</extention>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery>0</splitevery>
-    </file>
-    <fields>
-      <field>
-        <name>YearTR</name>
-        <type>String</type>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>4</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>MonthTR</name>
-        <type>String</type>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>2</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>DayTR</name>
-        <type>String</type>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>2</length>
-        <precision>-1</precision>
-      </field>
-    </fields>
-    <ConcatFields>
-<targetFieldName>DATE</targetFieldName>
-<targetFieldLength>0</targetFieldLength>
-<removeSelectedFields>N</removeSelectedFields>
-    </ConcatFields>
+      <row_threshold>0</row_threshold>
+      <message>&#x2a;&#x2a;&#x2a; Aborting &#x2a;&#x2a;</message>
+      <always_log_rows>N</always_log_rows>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -602,8 +510,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>592</xloc>
-      <yloc>256</yloc>
+      <xloc>544</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -612,7 +520,7 @@
     <name>Dummy &#x28;do nothing&#x29;</name>
     <type>Dummy</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -628,13 +536,164 @@
     </remotesteps>
     <GUI>
       <xloc>432</xloc>
-      <yloc>256</yloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Table input &#x28;RPT_RNM&#x29; SQL Server</name>
+    <name>Filter null &#x28;Attribute&#x29;</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<send_true_to/>
+<send_false_to>Abort</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>row</leftvalue>
+ <function>&#x3c;&#x3e;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Integer</type><text>0</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value> </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>432</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>Y</give_back_row>
+      <group>
+      </group>
+      <fields>
+        <field>
+          <aggregate>row</aggregate>
+          <subject>ATTRIBUTE_NAME</subject>
+          <type>COUNT_ANY</type>
+          <valuefield/>
+        </field>
+      </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>432</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Document Number Wrong &#x28;excel&#x29;</name>
+    <type>ExcelOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <encoding/>
+    <append>Y</append>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>&#x5c;&#x5c;psssva020&#x5c;DSR&#x5c;TEP_GPF&#x5c;DATA_MANAGEMENT&#x5c;Brilliant&#x5c;SRT Pentaho&#x5c;Document_number_wrong</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <create_parent_folder>N</create_parent_folder>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <sheetname>List Tags</sheetname>
+      <autosizecolums>Y</autosizecolums>
+      <nullisblank>N</nullisblank>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <splitevery>0</splitevery>
+      <usetempfiles>N</usetempfiles>
+      <tempdirectory/>
+      </file>
+    <template>
+      <enabled>N</enabled>
+      <append>N</append>
+      <filename>template.xls</filename>
+    </template>
+    <fields>
+    </fields>
+    <custom>
+    <header_font_name>arial</header_font_name>
+    <header_font_size>10</header_font_size>
+    <header_font_bold>N</header_font_bold>
+    <header_font_italic>N</header_font_italic>
+    <header_font_underline>no</header_font_underline>
+    <header_font_orientation>horizontal</header_font_orientation>
+    <header_font_color>black</header_font_color>
+    <header_background_color>none</header_background_color>
+    <header_row_height>255</header_row_height>
+    <header_alignment>left</header_alignment>
+    <header_image/>
+    <row_font_name>arial</row_font_name>
+    <row_font_size>10</row_font_size>
+    <row_font_color>black</row_font_color>
+    <row_background_color>none</row_background_color>
+      </custom>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>640</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Document Number &#x28;MTR&#x29;</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -645,7 +704,7 @@
       <schema_name/>
     </partitioning>
     <connection>SQLServer</connection>
-    <sql>select &#x2a; from VW_RNM_SUMMARY</sql>
+    <sql>select MIS.TAG_NUMBER, MIS.ATTRIBUTE_NAME, MIS.ATTRIBUTE_VALUE, MIS.ATTRIBUTE_VALIDATION_STATUS,dbo.Funct_GetPOFullText&#x28;dbo.Funct_GetSplitText&#x28;MIS.ATTRIBUTE_VALUE, &#x27;-&#x27;, 2&#x29;&#x29; AS PO_DOCUMENT,&#xd;&#xa;MTR.&#x5b;3131&#x5d; AS PO_NUMBER_IN_MTRDB, MTR.&#x5b;3133&#x5d; AS SERVICE_DESCRIPTION, MTR.TOOLS_SPI, MTR.TOOLS_S3D, MTR.TOOLS_SPPID, MTR.TEMPLATE_ACTUAL&#xd;&#xa;from TXN_CTDB_MISSING MIS&#xd;&#xa;LEFT OUTER JOIN TXN_MASTER_TAG_REGISTER MTR &#xd;&#xa;ON MIS.TAG_NUMBER &#x3d; MTR.TAG_NUMBER&#xd;&#xa;WHERE MIS.ATTRIBUTE_VALIDATION_STATUS LIKE &#x27;&#x25;DATA VALID&#x25;&#x27; AND MIS.ATTRIBUTE_VALUE like &#x27;TEP-&#x25;&#x27; &#xd;&#xa;and dbo.Funct_GetSplitText&#x28;MIS.ATTRIBUTE_VALUE, &#x27;-&#x27;, 2&#x29; NOT IN &#x28;017,2300,2400,9001&#x29;&#xd;&#xa;and dbo.Funct_GetSplitText&#x28;MIS.ATTRIBUTE_VALUE, &#x27;-&#x27;, 2&#x29; &#x3c;&#x3e; dbo.Funct_GetSplitText&#x28;MTR.&#x5b;3131&#x5d;, &#x27;-&#x27;, 1&#x29;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -659,126 +718,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Table output &#x28;rpt summary MYSQL&#x29;</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>MYSQL012</connection>
-    <schema/>
-    <table>RPT_RNM_SUMMARY</table>
-    <commit>10000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-        <field>
-          <column_name>ATTRIBUTE</column_name>
-          <stream_name>ATTRIBUTE</stream_name>
-        </field>
-        <field>
-          <column_name>ATTRIBUTE_NAME</column_name>
-          <stream_name>ATTRIBUTE_NAME</stream_name>
-        </field>
-        <field>
-          <column_name>DESC</column_name>
-          <stream_name>DESC</stream_name>
-        </field>
-        <field>
-          <column_name>DATE</column_name>
-          <stream_name>DATE</stream_name>
-        </field>
-        <field>
-          <column_name>MISSING</column_name>
-          <stream_name>Missing</stream_name>
-        </field>
-        <field>
-          <column_name>INVALID</column_name>
-          <stream_name>Invalid</stream_name>
-        </field>
-        <field>
-          <column_name>VALID</column_name>
-          <stream_name>Valid</stream_name>
-        </field>
-        <field>
-          <column_name>REQUIRED</column_name>
-          <stream_name>Required</stream_name>
-        </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>864</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Sort Date</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>DATE</name>
-        <ascending>Y</ascending>
-        <case_sensitive>Y</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>720</xloc>
-      <yloc>256</yloc>
+      <xloc>192</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
