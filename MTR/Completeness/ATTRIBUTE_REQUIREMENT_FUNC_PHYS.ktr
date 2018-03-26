@@ -515,18 +515,8 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values</from>
-      <to>Add constants</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Add constants</from>
       <to>Calculator</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Dummy &#x28;do nothing&#x29; 3</from>
-      <to>Select values 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -575,13 +565,38 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>Select values 3</from>
+      <to>Physical_requirement_out</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Select values 4</from>
+      <to>Dummy &#x28;do nothing&#x29; 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29; 2 2</from>
       <to>Functional_requirement_out</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values 3</from>
-      <to>Physical_requirement_out</to>
+      <from>Select values</from>
+      <to>replace &#x28;FUNC&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>replace &#x28;FUNC&#x29;</from>
+      <to>Add constants</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29; 3</from>
+      <to>replace &#x28;PHYS&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>replace &#x28;PHYS&#x29;</from>
+      <to>Select values 2</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -762,7 +777,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>464</xloc>
+      <xloc>336</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
@@ -794,6 +809,31 @@
     </step>
 
   <step>
+    <name>Dummy &#x28;do nothing&#x29; 2 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Dummy &#x28;do nothing&#x29; 3</name>
     <type>Dummy</type>
     <description/>
@@ -812,7 +852,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
+      <xloc>304</xloc>
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
@@ -894,7 +934,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>256</xloc>
+      <xloc>128</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
@@ -941,6 +981,10 @@
           <column_name>REQUIREMENT</column_name>
           <stream_name>Requirement</stream_name>
         </field>
+        <field>
+          <column_name>FUNCTIONAL_PHYSICAL</column_name>
+          <stream_name>FUNCTIONAL_PHYSICAL</stream_name>
+        </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -950,7 +994,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
+      <xloc>560</xloc>
       <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
@@ -982,7 +1026,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>256</xloc>
+      <xloc>112</xloc>
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1058,6 +1102,9 @@
           </field>
         <field>
           <name>CLASS_NAME</name>
+          </field>
+        <field>
+          <name>FUNCTIONAL_PHYSICAL</name>
           </field>
         </group>
       <fields>
@@ -1149,8 +1196,13 @@
       <schema_name/>
     </partitioning>
     <fields>      <field>        <name>TAG_CODE</name>
+        <rename/>
       </field>      <field>        <name>CLASS_NAME</name>
+        <rename/>
       </field>      <field>        <name>ATTRIBUTE</name>
+        <rename/>
+      </field>      <field>        <name>FUNCTIONAL_PHYSICAL</name>
+        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -1160,7 +1212,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
+      <xloc>448</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1178,7 +1230,9 @@
       <schema_name/>
     </partitioning>
     <fields>      <field>        <name>CLASS_NAME</name>
+        <rename/>
       </field>      <field>        <name>ATTRIBUTE</name>
+        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -1206,7 +1260,9 @@
       <schema_name/>
     </partitioning>
     <fields>      <field>        <name>CLASS_NAME</name>
+        <rename/>
       </field>      <field>        <name>Requirement</name>
+        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -1234,8 +1290,13 @@
       <schema_name/>
     </partitioning>
     <fields>      <field>        <name>TAG_CODE</name>
+        <rename/>
       </field>      <field>        <name>CLASS_NAME</name>
+        <rename/>
+      </field>      <field>        <name>FUNCTIONAL_PHYSICAL</name>
+        <rename/>
       </field>      <field>        <name>Requirement</name>
+        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -1280,6 +1341,14 @@
       </field>
       <field>
         <name>CLASS_NAME</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>FUNCTIONAL_PHYSICAL</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -1355,6 +1424,82 @@
     <GUI>
       <xloc>912</xloc>
       <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>replace &#x28;FUNC&#x29;</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>FUNCTIONAL_PHYSICAL</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>FUNC </replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>replace &#x28;PHYS&#x29;</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>FUNCTIONAL_PHYSICAL</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>PHYS </replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>464</xloc>
+      <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

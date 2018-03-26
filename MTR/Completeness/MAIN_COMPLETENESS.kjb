@@ -492,7 +492,7 @@
       <yloc>256</yloc>
     </entry>
     <entry>
-      <name>Job</name>
+      <name>Att ENG Completeness</name>
       <description/>
       <type>JOB</type>
       <specification_method>filename</specification_method>
@@ -523,7 +523,7 @@
       <yloc>160</yloc>
     </entry>
     <entry>
-      <name>Job 2</name>
+      <name>Att Supplier Completeness</name>
       <description/>
       <type>JOB</type>
       <specification_method>filename</specification_method>
@@ -550,7 +550,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
+      <xloc>432</xloc>
       <yloc>368</yloc>
     </entry>
     <entry>
@@ -587,6 +587,37 @@
       <nr>0</nr>
       <xloc>912</xloc>
       <yloc>256</yloc>
+    </entry>
+    <entry>
+      <name>RNM COmpleteness</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>filename</specification_method>
+      <job_object_id/>
+      <filename>&#x5c;&#x5c;Psssva012&#x5c;jobs&#x5c;MTR&#x5c;Completeness&#x5c;RNM Completeness&#x5c;Main&#x5c;RNM_Completeness.kjb</filename>
+      <jobname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>592</xloc>
+      <yloc>368</yloc>
     </entry>
   </entries>
   <hops>
@@ -628,7 +659,7 @@
     </hop>
     <hop>
       <from>Process2</from>
-      <to>Job</to>
+      <to>Att ENG Completeness</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -646,7 +677,7 @@
     </hop>
     <hop>
       <from>Process2</from>
-      <to>Job 2</to>
+      <to>Att Supplier Completeness</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -670,6 +701,15 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Process2</from>
+      <to>RNM COmpleteness</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>

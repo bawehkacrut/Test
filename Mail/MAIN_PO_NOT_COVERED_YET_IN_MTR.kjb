@@ -392,7 +392,7 @@
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename/>
+      <filename>&#x5c;&#x5c;Psssva012&#x5c;jobs&#x5c;Mail&#x5c;MTR&#x5c;Document Number&#x5c;DOCUMENT_NUMBER.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -423,7 +423,7 @@
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename/>
+      <filename>&#x5c;&#x5c;Psssva012&#x5c;jobs&#x5c;Mail&#x5c;MTR&#x5c;Validation Status&#x5c;VALIDATION_STATUS.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>

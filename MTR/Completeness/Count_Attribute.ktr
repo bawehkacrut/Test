@@ -544,91 +544,6 @@
     </step>
 
   <step>
-    <name>calculate missing and requirement</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <calculation>
-      <field_name>remove_requirement</field_name>
-      <calc_type>REMOVE_DIGITS</calc_type>
-      <field_a>ATT_REQUIRED</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>String</value_type>
-      <value_length>1000</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <calculation>
-      <field_name>count_requirement</field_name>
-      <calc_type>STRING_LEN</calc_type>
-      <field_a>remove_requirement</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>Integer</value_type>
-      <value_length>1000</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <calculation>
-      <field_name>remove_missing</field_name>
-      <calc_type>REMOVE_DIGITS</calc_type>
-      <field_a>ATT_MISSING</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>String</value_type>
-      <value_length>1000</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <calculation>
-      <field_name>count_missing</field_name>
-      <calc_type>STRING_LEN</calc_type>
-      <field_a>remove_missing</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>Integer</value_type>
-      <value_length>1000</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>208</xloc>
-      <yloc>192</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
     <name>Calculate &#x28;Percentage&#x29;</name>
     <type>Calculator</type>
     <description/>
@@ -737,14 +652,25 @@
       <schema_name/>
     </partitioning>
     <fields>      <field>        <name>TAG_NUMBER</name>
+        <rename/>
       </field>      <field>        <name>FUNCTIONAL_CLASS</name>
+        <rename/>
       </field>      <field>        <name>PHYSICAL_CLASS</name>
+        <rename/>
       </field>      <field>        <name>ATT_REQUIRED</name>
+        <rename/>
       </field>      <field>        <name>ATT_MISSING</name>
+        <rename/>
       </field>      <field>        <name>TOTAL_REQUIRED</name>
+        <rename/>
       </field>      <field>        <name>TOTAL_MISSING</name>
+        <rename/>
       </field>      <field>        <name>TOTAL_PROGRESS</name>
+        <rename/>
       </field>      <field>        <name>PERCENTAGE</name>
+        <rename/>
+      </field>      <field>        <name>att_missing_text</name>
+        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>TAG_NUMBER</name>
         <rename>TAG_NUMBER</rename>
@@ -881,6 +807,21 @@
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
+      </meta>      <meta>        <name>att_missing_text</name>
+        <rename>att_missing_text</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
       </meta>    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
@@ -890,6 +831,130 @@
     </remotesteps>
     <GUI>
       <xloc>800</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>calculate missing and requirement</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <field_name>remove_requirement</field_name>
+      <calc_type>REMOVE_DIGITS</calc_type>
+      <field_a>ATT_REQUIRED</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>1000</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>count_requirement</field_name>
+      <calc_type>STRING_LEN</calc_type>
+      <field_a>remove_requirement</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Integer</value_type>
+      <value_length>1000</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>remove_missing</field_name>
+      <calc_type>REMOVE_DIGITS</calc_type>
+      <field_a>ATT_MISSING</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>1000</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>count_missing</field_name>
+      <calc_type>STRING_LEN</calc_type>
+      <field_a>remove_missing</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Integer</value_type>
+      <value_length>1000</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>208</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>count &#x28;&#x2b;&#x29;</name>
+    <type>Formula</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+       <formula><field_name>TOTAL_REQUIRED</field_name>
+<formula_string>LEN&#x28;&#x5b;remove_requirement&#x5d;&#x29;&#x2b;&#x5b;constant&#x5d;</formula_string>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>TOTAL_MISSING</field_name>
+<formula_string>if&#x28;isblank&#x28;&#x5b;remove_missing&#x5d;&#x29;&#x3b;0&#x3b;LEN&#x28;&#x5b;remove_missing&#x5d;&#x29;&#x2b;&#x5b;constant&#x5d;&#x29;</formula_string>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
@@ -992,6 +1057,10 @@
           <column_name>PERCENTAGE</column_name>
           <stream_name>PERCENTAGE</stream_name>
         </field>
+        <field>
+          <column_name>ATT_MISSING_TEXT</column_name>
+          <stream_name>att_missing_text</stream_name>
+        </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -1002,45 +1071,6 @@
     </remotesteps>
     <GUI>
       <xloc>1104</xloc>
-      <yloc>192</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>count &#x28;&#x2b;&#x29;</name>
-    <type>Formula</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-       <formula><field_name>TOTAL_REQUIRED</field_name>
-<formula_string>LEN&#x28;&#x5b;remove_requirement&#x5d;&#x29;&#x2b;&#x5b;constant&#x5d;</formula_string>
-<value_type>Number</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-       <formula><field_name>TOTAL_MISSING</field_name>
-<formula_string>if&#x28;isblank&#x28;&#x5b;remove_missing&#x5d;&#x29;&#x3b;0&#x3b;LEN&#x28;&#x5b;remove_missing&#x5d;&#x29;&#x2b;&#x5b;constant&#x5d;&#x29;</formula_string>
-<value_type>Number</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>496</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>

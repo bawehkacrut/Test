@@ -512,7 +512,7 @@
       <schema_name/>
     </partitioning>
     <connection>MySQL</connection>
-    <sql>SELECT&#xd;&#xa;  TAG_NUMBER&#xd;&#xa;, ATT_REQUIRED&#xd;&#xa;, ATT_MISSING&#xd;&#xa;, TOTAL_REQUIRED&#xd;&#xa;, TOTAL_MISSING&#xd;&#xa;, TOTAL_PROGRESS&#xd;&#xa;, PERCENTAGE&#xd;&#xa;FROM txn_master_tag_register_attribute_percentage where tag_number in &#x28;select tag_number from attribute_requirement_mtr&#x29;&#xd;&#xa;</sql>
+    <sql>SELECT&#xd;&#xa;  TAG_NUMBER&#xd;&#xa;, ATT_REQUIRED&#xd;&#xa;, ATT_MISSING&#xd;&#xa;, TOTAL_REQUIRED&#xd;&#xa;, TOTAL_MISSING&#xd;&#xa;, TOTAL_PROGRESS&#xd;&#xa;, PERCENTAGE&#xd;&#xa;, ATT_MISSING_TEXT&#xd;&#xa;FROM txn_master_tag_register_attribute_percentage where tag_number in &#x28;select tag_number from attribute_requirement_mtr&#x29;&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -593,6 +593,11 @@
       <value>
         <name>PERCENTAGE</name>
         <rename>PERCENTAGE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ATT_MISSING_TEXT</name>
+        <rename>ATT_MISSING_TEXT</rename>
         <update>Y</update>
       </value>
     </lookup>

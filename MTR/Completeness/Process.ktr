@@ -828,6 +828,12 @@
         <default/>
         <type>String</type>
       </value>
+      <value>
+        <name>FUNCTIONAL_PHYSICAL</name>
+        <rename>FUNCTIONAL_PHYSICAL</rename>
+        <default/>
+        <type>String</type>
+      </value>
     </lookup>
     <cluster_schema/>
     <remotesteps>
