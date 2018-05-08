@@ -729,10 +729,10 @@
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>filter loop number duplication</note>
+      <note>filter sequence stand alone duplication</note>
       <xloc>2144</xloc>
       <yloc>864</yloc>
-      <width>169</width>
+      <width>214</width>
       <heigth>26</heigth>
       <fontname>Segoe UI</fontname>
       <fontsize>9</fontsize>
@@ -1110,7 +1110,7 @@
     </hop>
     <hop>
       <from>Dummy &#x28;see result count&#x29;</from>
-      <to>Filter loop number which has duplicate unit&#x2b;sequence</to>
+      <to>Filter stand alone number which has duplicate unit&#x2b;sequence</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -1124,7 +1124,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Filter loop number which has duplicate unit&#x2b;sequence</from>
+      <from>Filter stand alone number which has duplicate unit&#x2b;sequence</from>
       <to>Dummy &#x28;false result&#x29;</to>
       <enabled>Y</enabled>
     </hop>
@@ -1159,7 +1159,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Filter loop number which has duplicate unit&#x2b;sequence</from>
+      <from>Filter stand alone number which has duplicate unit&#x2b;sequence</from>
       <to>Dummy &#x28;true result&#x29; 3</to>
       <enabled>Y</enabled>
     </hop>
@@ -3455,7 +3455,7 @@
     <compare>
 <condition>
  <negated>N</negated>
- <leftvalue>measure value</leftvalue>
+ <leftvalue>measure value_1</leftvalue>
  <function>&#x3d;</function>
  <rightvalue/>
  <value><name>constant</name><type>Integer</type><text>0</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value> </condition>
@@ -3475,7 +3475,7 @@
     </step>
 
   <step>
-    <name>Filter loop number which has duplicate unit&#x2b;sequence</name>
+    <name>Filter stand alone number which has duplicate unit&#x2b;sequence</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -5350,10 +5350,6 @@
         <field>
           <column_name>SOURCES</column_name>
           <stream_name>SOURCES</stream_name>
-        </field>
-        <field>
-          <column_name>TYPE</column_name>
-          <stream_name>TYPE</stream_name>
         </field>
     </fields>
     <cluster_schema/>

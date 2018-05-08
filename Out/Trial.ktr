@@ -1169,145 +1169,75 @@
       <schema_name/>
     </partitioning>
     <fields>      <field>        <name>ID</name>
-        <rename/>
       </field>      <field>        <name>Document_ID_Number</name>
-        <rename/>
       </field>      <field>        <name>Client_Document_ID</name>
-        <rename/>
       </field>      <field>        <name>Rev</name>
-        <rename/>
       </field>      <field>        <name>Issuing_Description</name>
-        <rename/>
       </field>      <field>        <name>Status</name>
-        <rename/>
       </field>      <field>        <name>Title</name>
-        <rename/>
       </field>      <field>        <name>Second_Title</name>
-        <rename/>
       </field>      <field>        <name>Discipline</name>
-        <rename/>
       </field>      <field>        <name>Document_Type</name>
-        <rename/>
       </field>      <field>        <name>Iss_Dept</name>
-        <rename/>
       </field>      <field>        <name>Man_Dept</name>
-        <rename/>
       </field>      <field>        <name>Client_Review_Category</name>
-        <rename/>
       </field>      <field>        <name>Certifying_Body_Action</name>
-        <rename/>
       </field>      <field>        <name>Originator</name>
-        <rename/>
       </field>      <field>        <name>Incoming_VEN_Date</name>
-        <rename/>
       </field>      <field>        <name>Incoming_VEN_Number</name>
-        <rename/>
       </field>      <field>        <name>Incoming_VEN_Due_Date</name>
-        <rename/>
       </field>      <field>        <name>Next_Emission_Date</name>
-        <rename/>
       </field>      <field>        <name>Overdue_Vendor</name>
-        <rename/>
       </field>      <field>        <name>Delay_Vendor</name>
-        <rename/>
       </field>      <field>        <name>Saipem_Answer_to_Vendor</name>
-        <rename/>
       </field>      <field>        <name>Outgoing_VEN_Date</name>
-        <rename/>
       </field>      <field>        <name>Outgoing_VEN_Number</name>
-        <rename/>
       </field>      <field>        <name>Outgoing_VEN_Due_Date</name>
-        <rename/>
       </field>      <field>        <name>Overdue_CTR</name>
-        <rename/>
       </field>      <field>        <name>Delay_CTR</name>
-        <rename/>
       </field>      <field>        <name>Client_Answer</name>
-        <rename/>
       </field>      <field>        <name>Outgoing_CPY_Number</name>
-        <rename/>
       </field>      <field>        <name>Outgoing_CPY_Date</name>
-        <rename/>
       </field>      <field>        <name>Issuing_Reason</name>
-        <rename/>
       </field>      <field>        <name>Outgoing_CPY_Due_Date</name>
-        <rename/>
       </field>      <field>        <name>Incoming_CPY_Number</name>
-        <rename/>
       </field>      <field>        <name>Incoming_CPY_Date</name>
-        <rename/>
       </field>      <field>        <name>Overdue_CPY</name>
-        <rename/>
       </field>      <field>        <name>Delay_CPY</name>
-        <rename/>
       </field>      <field>        <name>Last_CPY_Answer</name>
-        <rename/>
       </field>      <field>        <name>Last_CTR_Answer</name>
-        <rename/>
       </field>      <field>        <name>Weight</name>
-        <rename/>
       </field>      <field>        <name>Activity</name>
-        <rename/>
       </field>      <field>        <name>Progress_Template</name>
-        <rename/>
       </field>      <field>        <name>IFR_Planned</name>
-        <rename/>
       </field>      <field>        <name>IFR_Actual</name>
-        <rename/>
       </field>      <field>        <name>IFR_Forecast</name>
-        <rename/>
       </field>      <field>        <name>FIN_Planned</name>
-        <rename/>
       </field>      <field>        <name>FIN_Actual</name>
-        <rename/>
       </field>      <field>        <name>FIN_Forecast</name>
-        <rename/>
       </field>      <field>        <name>FDB_Planned</name>
-        <rename/>
       </field>      <field>        <name>FDB_Actual</name>
-        <rename/>
       </field>      <field>        <name>FDB_Forecast</name>
-        <rename/>
       </field>      <field>        <name>Planned_Progress</name>
-        <rename/>
       </field>      <field>        <name>Actual_Progress</name>
-        <rename/>
       </field>      <field>        <name>Forecasted_Progress</name>
-        <rename/>
       </field>      <field>        <name>Actual_Status</name>
-        <rename/>
       </field>      <field>        <name>Relevant_For_Client_Progress</name>
-        <rename/>
       </field>      <field>        <name>Relevant_for_Project_Progress</name>
-        <rename/>
       </field>      <field>        <name>EMC</name>
-        <rename/>
       </field>      <field>        <name>Plant_Unit</name>
-        <rename/>
       </field>      <field>        <name>On_Hold</name>
-        <rename/>
       </field>      <field>        <name>On_Hold_Comment</name>
-        <rename/>
       </field>      <field>        <name>Ready_for_Handover</name>
-        <rename/>
       </field>      <field>        <name>Distribution_Code</name>
-        <rename/>
       </field>      <field>        <name>Function</name>
-        <rename/>
       </field>      <field>        <name>Department</name>
-        <rename/>
       </field>      <field>        <name>Asset_Name</name>
-        <rename/>
       </field>      <field>        <name>Free_Attribute_1</name>
-        <rename/>
       </field>      <field>        <name>Free_Attribute_2</name>
-        <rename/>
       </field>      <field>        <name>Free_Attribute_3</name>
-        <rename/>
       </field>      <field>        <name>CreatedAt</name>
-        <rename/>
       </field>      <field>        <name>system_info</name>
-        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>ID</name>
         <rename>ID</rename>
