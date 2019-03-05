@@ -1196,9 +1196,13 @@
       <schema_name/>
     </partitioning>
     <fields>      <field>        <name>TAG_CODE</name>
+        <rename/>
       </field>      <field>        <name>CLASS_NAME</name>
+        <rename/>
       </field>      <field>        <name>ATTRIBUTE</name>
+        <rename/>
       </field>      <field>        <name>FUNCTIONAL_PHYSICAL</name>
+        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -1226,7 +1230,9 @@
       <schema_name/>
     </partitioning>
     <fields>      <field>        <name>CLASS_NAME</name>
+        <rename/>
       </field>      <field>        <name>ATTRIBUTE</name>
+        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -1254,7 +1260,9 @@
       <schema_name/>
     </partitioning>
     <fields>      <field>        <name>CLASS_NAME</name>
+        <rename/>
       </field>      <field>        <name>Requirement</name>
+        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -1370,7 +1378,7 @@
     <name>Sort rows 2</name>
     <type>SortRows</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>

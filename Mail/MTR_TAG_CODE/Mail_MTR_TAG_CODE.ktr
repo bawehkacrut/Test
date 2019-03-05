@@ -571,7 +571,7 @@
       <replytoname>Email_sender</replytoname>
       <subject>Subject</subject>
       <include_date>N</include_date>
-      <include_subfolders>N</include_subfolders>
+      <include_subfolders>Y</include_subfolders>
       <zipFilenameDynamic>N</zipFilenameDynamic>
       <isFilenameDynamic>N</isFilenameDynamic>
       <attachContentFromField>N</attachContentFromField>
@@ -580,7 +580,7 @@
       <dynamicFieldname/>
       <dynamicWildcard/>
       <dynamicZipFilename/>
-      <sourcefilefoldername>&#x5c;&#x5c;psssva020&#x5c;DSR&#x5c;TEP_GPF&#x5c;DATA_MANAGEMENT&#x5c;Brilliant&#x5c;SRT Pentaho&#x5c;MTR_TAG_CODE</sourcefilefoldername>
+      <sourcefilefoldername>&#x5c;&#x5c;psssva020&#x5c;DSR&#x5c;TEP_GPF&#x5c;DATA_MANAGEMENT&#x5c;Brilliant&#x5c;SRT Pentaho&#x5c;MTR_TAG_CODE.xls</sourcefilefoldername>
       <sourcewildcard/>
       <contact_person/>
       <contact_phone/>

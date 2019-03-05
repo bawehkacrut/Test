@@ -569,22 +569,12 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>DACS Sub Item List</from>
-      <to>Filter rows 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter rows 2</from>
+      <from>Filter rows &#x28;null&#x29; sub item list</from>
       <to>DACS_sub_item_list</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>DACS Item List</from>
-      <to>Filter rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter rows</from>
+      <from>Filter rows &#x28;null&#x29; item list</from>
       <to>DACS_Item_list</to>
       <enabled>Y</enabled>
     </hop>
@@ -606,6 +596,46 @@
     <hop>
       <from>MSR</from>
       <to>MSR_OUT</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>DACS Item List</from>
+      <to>Trim item list</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>DACS Sub Item List</from>
+      <to>Trim sub item list</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;vdr custom&#x29;</from>
+      <to>SQL server VDR Customized</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>excel VDR customized</from>
+      <to>Dummy &#x28;vdr custom&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Replace in string</from>
+      <to>Filter rows &#x28;null&#x29; item list</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Trim sub item list</from>
+      <to>Replace in string 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Replace in string 2</from>
+      <to>Filter rows &#x28;null&#x29; sub item list</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Trim item list</from>
+      <to>Replace in string</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -929,7 +959,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
+      <xloc>464</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1135,7 +1165,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
+      <xloc>464</xloc>
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1263,7 +1293,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>752</xloc>
+      <xloc>1040</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1351,7 +1381,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>752</xloc>
+      <xloc>1072</xloc>
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1383,7 +1413,32 @@
     </step>
 
   <step>
-    <name>Filter rows</name>
+    <name>Dummy &#x28;vdr custom&#x29;</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1024</xloc>
+      <yloc>416</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows &#x28;null&#x29; item list</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -1411,14 +1466,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>608</xloc>
+      <xloc>880</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Filter rows 2</name>
+    <name>Filter rows &#x28;null&#x29; sub item list</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -1446,7 +1501,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
+      <xloc>928</xloc>
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1844,8 +1899,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>928</xloc>
-      <yloc>240</yloc>
+      <xloc>880</xloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1996,8 +2051,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1120</xloc>
-      <yloc>240</yloc>
+      <xloc>1072</xloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2399,6 +2454,126 @@
     </step>
 
   <step>
+    <name>Replace in string</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Item Code &#x28;Tag&#x29;</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>&#x2010;</replace_string>
+        <replace_by_string>-</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Item Code &#x28;Tag&#x29;</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>&#xa0;</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Item Code &#x28;Tag&#x29;</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> </replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Replace in string 2</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Sub-Item Code</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>&#x2010;</replace_string>
+        <replace_by_string>-</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Sub-Item Code</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>&#xa0;</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Sub-Item Code</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> </replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>736</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>S3D_EXTRACT</name>
     <type>TableOutput</type>
     <description/>
@@ -2690,6 +2865,10 @@
           <stream_name>Relevant_for_Project_Progress</stream_name>
         </field>
         <field>
+          <column_name>Originator</column_name>
+          <stream_name>Originator</stream_name>
+        </field>
+        <field>
           <column_name>Iss_Dept</column_name>
           <stream_name>Iss_Dept</stream_name>
         </field>
@@ -2706,36 +2885,8 @@
           <stream_name>Certifying_Body_Action</stream_name>
         </field>
         <field>
-          <column_name>Originator</column_name>
-          <stream_name>Originator</stream_name>
-        </field>
-        <field>
           <column_name>Outgoing_Number</column_name>
           <stream_name>Outgoing_Number</stream_name>
-        </field>
-        <field>
-          <column_name>Outgoing Date</column_name>
-          <stream_name>Outgoing Date</stream_name>
-        </field>
-        <field>
-          <column_name>Issuing Reason</column_name>
-          <stream_name>Issuing Reason</stream_name>
-        </field>
-        <field>
-          <column_name>Outgoing Due Date</column_name>
-          <stream_name>Outgoing Due Date</stream_name>
-        </field>
-        <field>
-          <column_name>Incoming Number</column_name>
-          <stream_name>Incoming Number</stream_name>
-        </field>
-        <field>
-          <column_name>Incoming Date</column_name>
-          <stream_name>Incoming Date</stream_name>
-        </field>
-        <field>
-          <column_name>Client Answer</column_name>
-          <stream_name>Client Answer</stream_name>
         </field>
         <field>
           <column_name>Weight</column_name>
@@ -2746,108 +2897,132 @@
           <stream_name>Activity</stream_name>
         </field>
         <field>
+          <column_name>Outgoing Date</column_name>
+          <stream_name>Outgoing_Date</stream_name>
+        </field>
+        <field>
+          <column_name>Outgoing Due Date</column_name>
+          <stream_name>Outgoing_Due_Date</stream_name>
+        </field>
+        <field>
+          <column_name>Incoming Number</column_name>
+          <stream_name>Incoming_Number</stream_name>
+        </field>
+        <field>
+          <column_name>Issuing Reason</column_name>
+          <stream_name>Issuing_Reason</stream_name>
+        </field>
+        <field>
+          <column_name>Incoming Date</column_name>
+          <stream_name>Incoming_Date</stream_name>
+        </field>
+        <field>
+          <column_name>Client Answer</column_name>
+          <stream_name>Client_Answer</stream_name>
+        </field>
+        <field>
           <column_name>Progress Template</column_name>
-          <stream_name>Progress Template</stream_name>
+          <stream_name>Progress_Template</stream_name>
         </field>
         <field>
           <column_name>IDC Planned</column_name>
-          <stream_name>IDC Planned</stream_name>
+          <stream_name>IDC_Planned</stream_name>
         </field>
         <field>
           <column_name>IDC Actual</column_name>
-          <stream_name>IDC Actual</stream_name>
+          <stream_name>IDC_Actual</stream_name>
         </field>
         <field>
           <column_name>IDC Forecast</column_name>
-          <stream_name>IDC Forecast</stream_name>
+          <stream_name>IDC_Forecast</stream_name>
         </field>
         <field>
           <column_name>IFR Planned</column_name>
-          <stream_name>IFR Planned</stream_name>
+          <stream_name>IFR_Planned</stream_name>
         </field>
         <field>
           <column_name>IFR Actual</column_name>
-          <stream_name>IFR Actual</stream_name>
+          <stream_name>IFR_Actual</stream_name>
         </field>
         <field>
           <column_name>IFR Forecast</column_name>
-          <stream_name>IFR Forecast</stream_name>
+          <stream_name>IFR_Forecast</stream_name>
         </field>
         <field>
           <column_name>IFA Planned</column_name>
-          <stream_name>IFA Planned</stream_name>
+          <stream_name>IFA_Planned</stream_name>
         </field>
         <field>
           <column_name>IFA Actual</column_name>
-          <stream_name>IFA Actual</stream_name>
+          <stream_name>IFA_Actual</stream_name>
         </field>
         <field>
           <column_name>IFA Forecast</column_name>
-          <stream_name>IFA Forecast</stream_name>
+          <stream_name>IFA_Forecast</stream_name>
         </field>
         <field>
           <column_name>AFC Planned</column_name>
-          <stream_name>AFC Planned</stream_name>
+          <stream_name>AFC_Planned</stream_name>
         </field>
         <field>
           <column_name>AFC Actual</column_name>
-          <stream_name>AFC Actual</stream_name>
+          <stream_name>AFC_Actual</stream_name>
         </field>
         <field>
           <column_name>AFC Forecast</column_name>
-          <stream_name>AFC Forecast</stream_name>
+          <stream_name>AFC_Forecast</stream_name>
         </field>
         <field>
           <column_name>IFI Planned</column_name>
-          <stream_name>IFI Planned</stream_name>
+          <stream_name>IFI_Planned</stream_name>
         </field>
         <field>
           <column_name>IFI Actual</column_name>
-          <stream_name>IFI Actual</stream_name>
+          <stream_name>IFI_Actual</stream_name>
         </field>
         <field>
           <column_name>IFI Forecast</column_name>
-          <stream_name>IFI Forecast</stream_name>
+          <stream_name>IFI_Forecast</stream_name>
         </field>
         <field>
           <column_name>ASB Planned</column_name>
-          <stream_name>ASB Planned</stream_name>
+          <stream_name>ASB_Planned</stream_name>
         </field>
         <field>
           <column_name>ASB Actual</column_name>
-          <stream_name>ASB Actual</stream_name>
+          <stream_name>ASB_Actual</stream_name>
         </field>
         <field>
           <column_name>ASB Forecast</column_name>
-          <stream_name>ASB Forecast</stream_name>
+          <stream_name>ASB_Forecast</stream_name>
         </field>
         <field>
           <column_name>Planned Progress</column_name>
-          <stream_name>Planned Progress</stream_name>
+          <stream_name>Planned_Progress</stream_name>
         </field>
         <field>
           <column_name>Actual Progress</column_name>
-          <stream_name>Actual Progress</stream_name>
+          <stream_name>Actual_Progress</stream_name>
         </field>
         <field>
           <column_name>Forecasted Progress</column_name>
-          <stream_name>Forecasted Progress</stream_name>
+          <stream_name>Forecasted_Progress</stream_name>
         </field>
         <field>
           <column_name>Actual Status</column_name>
-          <stream_name>Actual Status</stream_name>
+          <stream_name>Actual_Status</stream_name>
         </field>
         <field>
           <column_name>Next Status</column_name>
-          <stream_name>Next Status</stream_name>
+          <stream_name>Next_Status</stream_name>
         </field>
         <field>
           <column_name>Next Planned Date</column_name>
-          <stream_name>Next Planned Date</stream_name>
+          <stream_name>Next_Planned_Date</stream_name>
         </field>
         <field>
           <column_name>Next Forecasted Date</column_name>
-          <stream_name>Next Forecasted Date</stream_name>
+          <stream_name>Next_Forecasted_Date</stream_name>
         </field>
     </fields>
     <cluster_schema/>
@@ -3176,6 +3351,170 @@
     <GUI>
       <xloc>752</xloc>
       <yloc>576</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>SQL server VDR Customized</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>SQL Server</connection>
+    <schema/>
+    <table>TXN_VDR_CUSTOMIZED</table>
+    <commit>100000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>VENDOR</column_name>
+          <stream_name>Vendor</stream_name>
+        </field>
+        <field>
+          <column_name>DIN</column_name>
+          <stream_name>DIN</stream_name>
+        </field>
+        <field>
+          <column_name>CIN</column_name>
+          <stream_name>CIN</stream_name>
+        </field>
+        <field>
+          <column_name>TITLE</column_name>
+          <stream_name>TITLE</stream_name>
+        </field>
+        <field>
+          <column_name>REV</column_name>
+          <stream_name>REV</stream_name>
+        </field>
+        <field>
+          <column_name>CLASS</column_name>
+          <stream_name>CLASS</stream_name>
+        </field>
+        <field>
+          <column_name>POI</column_name>
+          <stream_name>POI</stream_name>
+        </field>
+        <field>
+          <column_name>DISC</column_name>
+          <stream_name>DISC</stream_name>
+        </field>
+        <field>
+          <column_name>SR</column_name>
+          <stream_name>SR N&#xb0;</stream_name>
+        </field>
+        <field>
+          <column_name>DOC_TYPE</column_name>
+          <stream_name>DOC TYPE</stream_name>
+        </field>
+        <field>
+          <column_name>INCOMING_VEN_NUMBER</column_name>
+          <stream_name>Incoming VEN Number</stream_name>
+        </field>
+        <field>
+          <column_name>INCOMING_VEN_DATE</column_name>
+          <stream_name>Incoming VEN Date</stream_name>
+        </field>
+        <field>
+          <column_name>OVERDUE_VENDOR</column_name>
+          <stream_name>Overdue Vendor</stream_name>
+        </field>
+        <field>
+          <column_name>DELAY_VENDOR</column_name>
+          <stream_name>Delay Vendor</stream_name>
+        </field>
+        <field>
+          <column_name>OUTGOING_CPY_NUMBER</column_name>
+          <stream_name>Outgoing CPY Number</stream_name>
+        </field>
+        <field>
+          <column_name>OUTGOING_CPY_DATE</column_name>
+          <stream_name>Outgoing CPY Date</stream_name>
+        </field>
+        <field>
+          <column_name>ISSUING_REASON</column_name>
+          <stream_name>Issuing Reason</stream_name>
+        </field>
+        <field>
+          <column_name>OUTGOING_CPY_DUE_DATE</column_name>
+          <stream_name>Outgoing CPY Due Date</stream_name>
+        </field>
+        <field>
+          <column_name>INCOMING_CPY_NUMBER</column_name>
+          <stream_name>Incoming CPY Number</stream_name>
+        </field>
+        <field>
+          <column_name>INCOMING_CPY_DATE</column_name>
+          <stream_name>Incoming CPY Date</stream_name>
+        </field>
+        <field>
+          <column_name>OVERDUE_CPY</column_name>
+          <stream_name>Overdue CPY</stream_name>
+        </field>
+        <field>
+          <column_name>DELAY_CPY</column_name>
+          <stream_name>Delay CPY</stream_name>
+        </field>
+        <field>
+          <column_name>CLIENT_ANSWER</column_name>
+          <stream_name>Client Answer</stream_name>
+        </field>
+        <field>
+          <column_name>OUTGOING_VEN_DATE</column_name>
+          <stream_name>Outgoing VEN Date</stream_name>
+        </field>
+        <field>
+          <column_name>OUTGOING_VEN_NUMBER</column_name>
+          <stream_name>Outgoing VEN Number</stream_name>
+        </field>
+        <field>
+          <column_name>SAIPEM_ANSWER_TO_VENDOR</column_name>
+          <stream_name>Saipem Answer to Vendor</stream_name>
+        </field>
+        <field>
+          <column_name>INCOMING_VEN_DUE_DATE</column_name>
+          <stream_name>Incoming VEN Due Date</stream_name>
+        </field>
+        <field>
+          <column_name>DELAY_CTR</column_name>
+          <stream_name>Delay CTR</stream_name>
+        </field>
+        <field>
+          <column_name>LAST_CPY_ANSWER</column_name>
+          <stream_name>Last CPY Answer</stream_name>
+        </field>
+        <field>
+          <column_name>LAST_CTR_ANSWER</column_name>
+          <stream_name>Last CTR Answer</stream_name>
+        </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1168</xloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -4025,6 +4364,476 @@
     <GUI>
       <xloc>736</xloc>
       <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Trim item list</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Project Code</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Item Code &#x28;Tag&#x29;</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Item Code Description</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Item Type</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Item Type Description</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Discipline</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Area</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Vendor</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>System</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Subsystem</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Main Item &#x2f; Package</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Main Item &#x2f; Package description</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Quantity</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>UM</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Reference Design Documents</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>WBS Fabrication Activity</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Bill Item</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Notes</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Free1</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Free2</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Free3</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Trim sub item list</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Project Code</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Sub-Item Code</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Sub-Item Description</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Sub-Item Type</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Linked Item Code &#x28;Tag&#x29;</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Notes</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Free1</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Free2</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Free3</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Additional Data</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Results</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>592</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -4970,6 +5779,440 @@
     <GUI>
       <xloc>480</xloc>
       <yloc>576</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>excel VDR customized</name>
+    <type>ExcelInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <header>Y</header>
+    <noempty>N</noempty>
+    <stoponempty>N</stoponempty>
+    <filefield/>
+    <sheetfield/>
+    <sheetrownumfield/>
+    <rownumfield/>
+    <sheetfield/>
+    <filefield/>
+    <limit>0</limit>
+    <encoding/>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field/>
+    <accept_stepname/>
+    <file>
+      <name>&#x5c;&#x5c;psssva020&#x5c;DSR&#x5c;TEP_GPF&#x5c;DATA_MANAGEMENT&#x5c;Brilliant&#x5c;VDR&#x5c;VDR_CUSTOMIZED.xls</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>SR N&#xb0;</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Vendor</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>DIN</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>CIN</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>TITLE</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>REV</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>CLASS</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>POI</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>DISC</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>DOC TYPE</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Incoming VEN Number</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Incoming VEN Date</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Overdue Vendor</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Delay Vendor</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Outgoing CPY Number</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Outgoing CPY Date</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Issuing Reason</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Outgoing CPY Due Date</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Incoming CPY Number</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Incoming CPY Date</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Overdue CPY</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Delay CPY</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Client Answer</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Outgoing VEN Date</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Outgoing VEN Number</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Saipem Answer to Vendor</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Incoming VEN Due Date</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Delay CTR</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Last CPY Answer</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Last CTR Answer</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+    </fields>
+    <sheets>
+      <sheet>
+        <name>CUSTOMIZED VDR</name>
+        <startrow>3</startrow>
+        <startcol>0</startcol>
+        </sheet>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>N</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+    <spreadsheet_type>JXL</spreadsheet_type>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>880</xloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

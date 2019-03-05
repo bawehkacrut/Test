@@ -472,18 +472,8 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Table sub item list</from>
-      <to>filter columns</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>filter columns</from>
       <to>Dummy &#x28;preview&#x29;</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>dacs list</from>
-      <to>Select Values &#x28;Item List&#x29;</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -524,7 +514,7 @@
     <hop>
       <from>Add constants &#x28;Parent Status&#x29;</from>
       <to>Copy value field</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Filter Parent Tag</from>
@@ -562,11 +552,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Dummy &#x28;do nothing&#x29; 2</from>
-      <to>Sort row</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Add constants &#x28;Parent Status &#x26; Parent&#x29;</from>
       <to>Rename columns 2</to>
       <enabled>Y</enabled>
@@ -577,8 +562,343 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>Replace in string</from>
+      <to>Select Values &#x28;Item List&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table sub item list</from>
+      <to>Data Validator</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator</from>
+      <to>filter columns</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator</from>
+      <to>Invalid Tag</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>VOID Criteria</from>
+      <to>Data Validator 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator 2</from>
+      <to>Data Validator 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>DEL Criteria</from>
+      <to>Data Validator 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator 2 2</from>
+      <to>Data Validator 2 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>MTR Creiteria</from>
+      <to>Data Validator 2 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CTDB_criteria</from>
+      <to>Data Validator 2 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calculator</from>
+      <to>Split Fields</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Split Fields</from>
+      <to>Filter rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Concat Fields</from>
+      <to>Data Validator 2 5</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Void&#x2f;Deleted</from>
+      <to>Data Validator 2 5</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator 2 5</from>
+      <to>Dummy &#x28;do nothing&#x29; 9</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator 2 5</from>
+      <to>Dummy &#x28;do nothing&#x29; 10</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29; 9</from>
+      <to>Replace in string &#x28;Parent tag void&#x2f;deleted&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Batch</from>
+      <to>Calculator</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29; 10</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows</from>
+      <to>Select values 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2</from>
+      <to>Dummy &#x28;do nothing&#x29; 8</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Dummy &#x28;do nothing&#x29; 8</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29; 2</from>
+      <to>Data Validator 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Loop Criteria</from>
+      <to>Data Validator 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator 3</from>
+      <to>Data Validator 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator 3</from>
+      <to>Dummy &#x28;do nothing&#x29; 11</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29; 11</from>
+      <to>Copy value field 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Copy value field 3</from>
+      <to>Split Fields 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Split Fields 2</from>
+      <to>Concat Fields 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input &#x28;Loop_Name&#x29;</from>
+      <to>Copy value field 3 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Copy value field 3 2</from>
+      <to>Split Fields 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Split Fields 2 2</from>
+      <to>Concat Fields 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Concat Fields 2 2</from>
+      <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows</from>
+      <to>Merge Join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Concat Fields 2</from>
+      <to>Sort rows 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 2</from>
+      <to>Merge Join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Merge Join</from>
+      <to>Dummy &#x28;do nothing&#x29; 12</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29; 12</from>
+      <to>Filter rows 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows 2</from>
+      <to>Dummy &#x28;do nothing&#x29; 13</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows 2</from>
+      <to>Dummy &#x28;do nothing&#x29; 14</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29; 13</from>
+      <to>Add constants 5</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants 5</from>
+      <to>Concat Fields 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Concat Fields 3</from>
+      <to>Select values 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29; 14</from>
+      <to>Add constants 5 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants 5 2</from>
+      <to>Select values 3 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 3 2</from>
+      <to>Sort rows 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 3</from>
+      <to>Sort rows 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 3</from>
+      <to>Unique rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>TXN_DACS_VALIDATION</from>
+      <to>Replace in string</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Sort row</from>
       <to>TXN_DACS_OUTPUT</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator 2</from>
+      <to>Add constants VOID</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator 2 2</from>
+      <to>Add constants DELETED</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows</from>
+      <to>Concat Fields</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator 2 3</from>
+      <to>Add constants MTR</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator 2 3</from>
+      <to>Data Validator 2 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator 2 4</from>
+      <to>Add constants CTDB</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator 2 4</from>
+      <to>Add constants 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Replace in string &#x28;Parent tag void&#x2f;deleted&#x29;</from>
+      <to>Dummy &#x28;do nothing&#x29; 10</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29; 8</from>
+      <to>Select values 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 4</from>
+      <to>Sort row</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants CTDB</from>
+      <to>Select values 5</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants 2 2</from>
+      <to>Select values 5</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants MTR</from>
+      <to>Select values 5</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants DELETED</from>
+      <to>Select values 5</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants VOID</from>
+      <to>Select values 5</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique rows</from>
+      <to>Select values 6</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 5</from>
+      <to>Batch</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 6</from>
+      <to>Batch</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -676,7 +996,7 @@
     <name>Add constants &#x28;Parent Status&#x29; 2</name>
     <type>Constant</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -712,6 +1032,736 @@
     </step>
 
   <step>
+    <name>Add constants 2 2</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Remarks</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>CLEAN</nullif>
+        <length>10</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1456</xloc>
+      <yloc>912</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Add constants 5</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Remarks</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>LOOP CHANGE INTO</nullif>
+        <length>10</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2944</xloc>
+      <yloc>496</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Add constants 5 2</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Remarks</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>LOOP</nullif>
+        <length>10</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2736</xloc>
+      <yloc>592</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Add constants CTDB</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Remarks</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>CTDB</nullif>
+        <length>10</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1744</xloc>
+      <yloc>800</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Add constants DELETED</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Remarks</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>DELETED</nullif>
+        <length>10</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1872</xloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Add constants MTR</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Remarks</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>MTR</nullif>
+        <length>10</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1792</xloc>
+      <yloc>704</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Add constants VOID</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Remarks</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>VOID</nullif>
+        <length>10</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1920</xloc>
+      <yloc>496</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Batch</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2032</xloc>
+      <yloc>912</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>CTDB_criteria</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>SQLServer</connection>
+    <sql>select tag_number from ctdb_tags where tag_status &#x3c;&#x3e; &#x27;VOID&#x27;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1232</xloc>
+      <yloc>800</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Calculator</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <field_name>BP_TAG_NUMBER_COPY</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>BP_TAG_NUMBER</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1920</xloc>
+      <yloc>1008</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Concat Fields</name>
+    <type>ConcatFields</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <separator>-</separator>
+    <enclosure/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>N</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding/>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>file</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>Unit</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Tag_Code</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Sequence</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <ConcatFields>
+<targetFieldName>Parent_tag_Cable</targetFieldName>
+<targetFieldLength>0</targetFieldLength>
+<removeSelectedFields>N</removeSelectedFields>
+    </ConcatFields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1840</xloc>
+      <yloc>1136</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Concat Fields 2</name>
+    <type>ConcatFields</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <separator/>
+    <enclosure/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>N</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding/>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>file</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>Unit</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Sequence</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <ConcatFields>
+<targetFieldName>UnitSequence</targetFieldName>
+<targetFieldLength>-1</targetFieldLength>
+<removeSelectedFields>N</removeSelectedFields>
+    </ConcatFields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2064</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Concat Fields 2 2</name>
+    <type>ConcatFields</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <separator/>
+    <enclosure/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>N</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding/>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>file</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>Unit</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Sequence</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <ConcatFields>
+<targetFieldName>UnitSequence</targetFieldName>
+<targetFieldLength>-1</targetFieldLength>
+<removeSelectedFields>N</removeSelectedFields>
+    </ConcatFields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2336</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Concat Fields 3</name>
+    <type>ConcatFields</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <separator> </separator>
+    <enclosure/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>N</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding/>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>file</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>Remarks</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>loop_name</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <ConcatFields>
+<targetFieldName>REMARKS</targetFieldName>
+<targetFieldLength>0</targetFieldLength>
+<removeSelectedFields>N</removeSelectedFields>
+    </ConcatFields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2944</xloc>
+      <yloc>592</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Copy value field</name>
     <type>Calculator</type>
     <description/>
@@ -725,7 +1775,7 @@
     <calculation>
       <field_name>PARENT</field_name>
       <calc_type>COPY_FIELD</calc_type>
-      <field_a>Comm ID &#x2f; MC ID</field_a>
+      <field_a>ITEM_CODE</field_a>
       <field_b/>
       <field_c/>
       <value_type>String</value_type>
@@ -747,6 +1797,496 @@
     <GUI>
       <xloc>1120</xloc>
       <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Copy value field 3</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <field_name>BP_TAG_NUMBER_COPY</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>BP_TAG_NUMBER</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1776</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Copy value field 3 2</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <field_name>LOOP_NAME_COPY</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>loop_name</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2640</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>DEL Criteria</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>SQLServer</connection>
+    <sql>select distinct&#x28;tag_number&#x29; from VW_ALL_TAG_UNUSED where sources in &#x28;&#x27;DELETED MTR&#x27;, &#x27;TAGS DEL&#x27;&#x29;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1232</xloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Data Validator</name>
+    <type>Validator</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<validate_all>N</validate_all>
+<concat_errors>N</concat_errors>
+<concat_separator>&#x7c;</concat_separator>
+       <validator_field><name>SUB_ITEM_CODE</name>
+<validation_name>Tags Format</validation_name>
+<max_length/>
+<min_length/>
+<null_allowed>Y</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>None</data_type>
+<data_type_verified>N</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression>&#x28;&#x28;&#x28;2300&#x7c;2400&#x7c;1300&#x7c;1400&#x29;&#x28;-&#x29;&#x28;&#x28;&#x5b;A-Z&#x5d;&#x7b;1,4&#x7d;&#x29;&#x29;&#x28;-&#x29;&#x28;&#x5b;1-9&#x5d;&#x28;&#x5b;0-9&#x5d;&#x7b;3,4&#x7d;&#x29;&#x29;&#x28;&#x5b;&#x5e;RT0-9&#x5d;&#x7b;0,1&#x7d;&#x29;&#x29;&#x7c;&#x28;017&#x29;&#x28;-&#x29;&#x28;&#x28;&#x5b;A-Z&#x5d;&#x7b;1,4&#x7d;&#x29;&#x29;&#x28;-&#x29;&#x28;&#x5b;3-9&#x5d;&#x28;&#x5b;0-9&#x5d;&#x28;&#x5b;0-9&#x5d;&#x7b;3&#x7d;&#x29;&#x29;&#x29;&#x28;&#x5b;&#x5e;RT0-9&#x5d;&#x7b;0,1&#x7d;&#x29;&#x29;&#x7c;&#x28;&#x28;2300&#x7c;2400&#x7c;1300&#x7c;1400&#x29;&#x28;-&#x29;&#x28;&#x5b;A-Z&#x5d;&#x29;&#x28;-&#x29;&#x28;&#x5b;1-9&#x5d;&#x28;&#x5b;0-9&#x5d;&#x7b;3,4&#x7d;&#x29;&#x29;&#x7c;&#x28;017&#x29;&#x28;-&#x29;&#x28;&#x5b;A-Z&#x5d;&#x29;&#x28;-&#x29;&#x28;&#x5b;3-9&#x5d;&#x28;&#x5b;1-9&#x5d;&#x28;&#x5b;0-9&#x5d;&#x7b;3&#x7d;&#x29;&#x29;&#x29;&#x29;</regular_expression>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description/>
+<is_sourcing_values>N</is_sourcing_values>
+<sourcing_step/>
+<sourcing_field/>
+<allowed_value></allowed_value></validator_field>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>208</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Data Validator 2</name>
+    <type>Validator</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<validate_all>N</validate_all>
+<concat_errors>N</concat_errors>
+<concat_separator>&#x7c;</concat_separator>
+       <validator_field><name>BP_TAG_NUMBER</name>
+<validation_name>Tag Void</validation_name>
+<max_length/>
+<min_length/>
+<null_allowed>Y</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>None</data_type>
+<data_type_verified>N</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description/>
+<is_sourcing_values>Y</is_sourcing_values>
+<sourcing_step>VOID Criteria</sourcing_step>
+<sourcing_field>tag_number</sourcing_field>
+<allowed_value></allowed_value></validator_field>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1456</xloc>
+      <yloc>496</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Data Validator 2 2</name>
+    <type>Validator</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<validate_all>N</validate_all>
+<concat_errors>N</concat_errors>
+<concat_separator>&#x7c;</concat_separator>
+       <validator_field><name>BP_TAG_NUMBER</name>
+<validation_name>Tag Deleted</validation_name>
+<max_length/>
+<min_length/>
+<null_allowed>Y</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>None</data_type>
+<data_type_verified>N</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description/>
+<is_sourcing_values>Y</is_sourcing_values>
+<sourcing_step>DEL Criteria</sourcing_step>
+<sourcing_field>tag_number</sourcing_field>
+<allowed_value></allowed_value></validator_field>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1456</xloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Data Validator 2 3</name>
+    <type>Validator</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<validate_all>N</validate_all>
+<concat_errors>N</concat_errors>
+<concat_separator>&#x7c;</concat_separator>
+       <validator_field><name>BP_TAG_NUMBER</name>
+<validation_name>Tag MTR</validation_name>
+<max_length/>
+<min_length/>
+<null_allowed>Y</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>None</data_type>
+<data_type_verified>N</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description/>
+<is_sourcing_values>Y</is_sourcing_values>
+<sourcing_step>MTR Creiteria</sourcing_step>
+<sourcing_field>tag_number</sourcing_field>
+<allowed_value></allowed_value></validator_field>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1456</xloc>
+      <yloc>704</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Data Validator 2 4</name>
+    <type>Validator</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<validate_all>N</validate_all>
+<concat_errors>N</concat_errors>
+<concat_separator>&#x7c;</concat_separator>
+       <validator_field><name>BP_TAG_NUMBER</name>
+<validation_name>Tag CTDB</validation_name>
+<max_length/>
+<min_length/>
+<null_allowed>Y</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>None</data_type>
+<data_type_verified>N</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description/>
+<is_sourcing_values>Y</is_sourcing_values>
+<sourcing_step>CTDB_criteria</sourcing_step>
+<sourcing_field>tag_number</sourcing_field>
+<allowed_value></allowed_value></validator_field>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1456</xloc>
+      <yloc>800</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Data Validator 2 5</name>
+    <type>Validator</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<validate_all>N</validate_all>
+<concat_errors>N</concat_errors>
+<concat_separator>&#x7c;</concat_separator>
+       <validator_field><name>Parent_tag_Cable</name>
+<validation_name>Tag Void</validation_name>
+<max_length/>
+<min_length/>
+<null_allowed>Y</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>None</data_type>
+<data_type_verified>N</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description/>
+<is_sourcing_values>Y</is_sourcing_values>
+<sourcing_step>Void&#x2f;Deleted</sourcing_step>
+<sourcing_field>tag_number</sourcing_field>
+<allowed_value></allowed_value></validator_field>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1840</xloc>
+      <yloc>1248</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Data Validator 3</name>
+    <type>Validator</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<validate_all>N</validate_all>
+<concat_errors>N</concat_errors>
+<concat_separator>&#x7c;</concat_separator>
+       <validator_field><name>ITEM_TYPE_DESC</name>
+<validation_name>ItemTypeDescription</validation_name>
+<max_length/>
+<min_length/>
+<null_allowed>Y</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>None</data_type>
+<data_type_verified>N</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description/>
+<is_sourcing_values>Y</is_sourcing_values>
+<sourcing_step>Loop Criteria</sourcing_step>
+<sourcing_field>Loop Criteria</sourcing_field>
+<allowed_value></allowed_value></validator_field>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1456</xloc>
+      <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -880,14 +2420,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>672</xloc>
+      <xloc>720</xloc>
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Dummy &#x28;do nothing&#x29; 2</name>
+    <name>Dummy &#x28;do nothing&#x29; 10</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -905,8 +2445,183 @@
       </output>
     </remotesteps>
     <GUI>
+      <xloc>1840</xloc>
+      <yloc>1392</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 11</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1616</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 12</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2536</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 13</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2944</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 14</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2736</xloc>
+      <yloc>496</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>1456</xloc>
       <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 8</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1456</xloc>
+      <yloc>1392</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 9</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2032</xloc>
+      <yloc>1248</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1005,7 +2720,7 @@
  <conditions>
   <condition>
    <negated>N</negated>
-   <leftvalue>Item Type Description</leftvalue>
+   <leftvalue>ITEM_TYPE_DESCRIPTION</leftvalue>
    <function>CONTAINS</function>
    <rightvalue/>
    <value><name>constant</name><type>String</type><text>Loop</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
@@ -1015,14 +2730,14 @@
    <conditions>
     <condition>
      <negated>N</negated>
-     <leftvalue>Discipline</leftvalue>
+     <leftvalue>DISCIPLINE</leftvalue>
      <function>&#x3d;</function>
      <rightvalue/>
      <value><name>constant</name><type>String</type><text>Electrical</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
     <condition>
      <negated>N</negated>
      <operator>AND</operator>
-     <leftvalue>Comm ID &#x2f; MC ID</leftvalue>
+     <leftvalue>ITEM_CODE</leftvalue>
      <function>CONTAINS</function>
      <rightvalue/>
      <value><name>constant</name><type>String</type><text>&#x2b;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
@@ -1046,6 +2761,41 @@
     </step>
 
   <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<send_true_to>Concat Fields</send_true_to>
+<send_false_to>Select values 2</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>Cable_Tag</leftvalue>
+ <function>IS NOT NULL</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1456</xloc>
+      <yloc>1136</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Filter rows &#x28;IS tag &#x3d; 1&#x29;</name>
     <type>FilterRows</type>
     <description/>
@@ -1064,14 +2814,14 @@
  <conditions>
   <condition>
    <negated>N</negated>
-   <leftvalue>IS Tag</leftvalue>
+   <leftvalue>IS_TAG</leftvalue>
    <function>&#x3d;</function>
    <rightvalue/>
    <value><name>constant</name><type>String</type><text>1</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
   <condition>
    <negated>N</negated>
    <operator>AND</operator>
-   <leftvalue>BP Tag Number</leftvalue>
+   <leftvalue>BP_TAG_NUMBER</leftvalue>
    <function>IS NOT NULL</function>
    <rightvalue/>
    </condition>
@@ -1093,6 +2843,179 @@
     </step>
 
   <step>
+    <name>Filter rows 2</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<send_true_to>Dummy &#x28;do nothing&#x29; 13</send_true_to>
+<send_false_to>Dummy &#x28;do nothing&#x29; 14</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>Loop_Code</leftvalue>
+ <function>&#x3c;&#x3e;</function>
+ <rightvalue>Loop_Code_1</rightvalue>
+ </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2736</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Invalid Tag</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>208</xloc>
+      <yloc>384</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Loop Criteria</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Loop Criteria</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>100</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <data>
+      <line> <item>Instrument Loop Function Test</item> </line>
+      <line> <item>Safety Instrument Function &#x28;SIF&#x29; Test</item> </line>
+      <line> <item>Hardwire&#x2f;Soft tag Inter Trip Loop Check</item> </line>
+      <line> <item>Motor Control and Remote I&#x2f;O Loop</item> </line>
+      <line> <item>Fire Detector &#x2f; MAC Device Loop Check</item> </line>
+      <line> <item>Gas Detection Loop Check</item> </line>
+      <line> <item>Fire Damper Loop Test</item> </line>
+    </data>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1232</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>MTR Creiteria</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>SQLServer</connection>
+    <sql>select tag_number from txn_master_tag_register</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1232</xloc>
+      <yloc>704</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<join_type>INNER</join_type>
+<step1>Sort rows 2</step1>
+<step2>Sort rows</step2>
+    <keys_1>
+      <key>UnitSequence</key>
+    </keys_1>
+    <keys_2>
+      <key>UnitSequence</key>
+    </keys_2>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2336</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Rename columns</name>
     <type>SelectValues</type>
     <description/>
@@ -1103,20 +3026,24 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>Comm ID &#x2f; MC ID</name>
+    <fields>      <field>        <name>ITEM_CODE</name>
         <rename>Comm_ID&#x2f;MC_ID</rename>
-      </field>      <field>        <name>BP Tag Number</name>
-        <rename>BP_TAG_NUMBER</rename>
-      </field>      <field>        <name>System</name>
-        <rename>SYSTEM</rename>
-      </field>      <field>        <name>Subsystem</name>
-        <rename>SUBSYSTEM</rename>
-      </field>      <field>        <name>Item Code Description</name>
+      </field>      <field>        <name>BP_TAG_NUMBER</name>
+      </field>      <field>        <name>SYSTEM</name>
+      </field>      <field>        <name>SUBSYSTEM</name>
+      </field>      <field>        <name>ITEM_CODE_DESCRIPTION</name>
         <rename>ITEM_CODE_DESC</rename>
-      </field>      <field>        <name>Item Type Description</name>
+      </field>      <field>        <name>ITEM_TYPE_DESCRIPTION</name>
         <rename>ITEM_TYPE_DESC</rename>
       </field>      <field>        <name>PARENT</name>
       </field>      <field>        <name>PARENT_STATUS</name>
+      </field>      <field>        <name>DISCIPLINE</name>
+      </field>      <field>        <name>WBS_FABRICATION_ACTIVITY</name>
+      </field>      <field>        <name>NOTES</name>
+      </field>      <field>        <name>FREE1</name>
+      </field>      <field>        <name>FREE2</name>
+      </field>      <field>        <name>FREE3</name>
+      </field>      <field>        <name>ITEM_TYPE</name>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -1143,20 +3070,24 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>Comm ID &#x2f; MC ID</name>
+    <fields>      <field>        <name>ITEM_CODE</name>
         <rename>Comm_ID&#x2f;MC_ID</rename>
-      </field>      <field>        <name>BP Tag Number</name>
-        <rename>BP_TAG_NUMBER</rename>
-      </field>      <field>        <name>System</name>
-        <rename>SYSTEM</rename>
-      </field>      <field>        <name>Subsystem</name>
-        <rename>SUBSYSTEM</rename>
-      </field>      <field>        <name>Item Code Description</name>
+      </field>      <field>        <name>BP_TAG_NUMBER</name>
+      </field>      <field>        <name>SYSTEM</name>
+      </field>      <field>        <name>SUBSYSTEM</name>
+      </field>      <field>        <name>ITEM_CODE_DESCRIPTION</name>
         <rename>ITEM_CODE_DESC</rename>
-      </field>      <field>        <name>Item Type Description</name>
+      </field>      <field>        <name>ITEM_TYPE_DESCRIPTION</name>
         <rename>ITEM_TYPE_DESC</rename>
       </field>      <field>        <name>PARENT</name>
       </field>      <field>        <name>PARENT_STATUS</name>
+      </field>      <field>        <name>DISCIPLINE</name>
+      </field>      <field>        <name>WBS_FABRICATION_ACTIVITY</name>
+      </field>      <field>        <name>NOTES</name>
+      </field>      <field>        <name>FREE1</name>
+      </field>      <field>        <name>FREE2</name>
+      </field>      <field>        <name>FREE3</name>
+      </field>      <field>        <name>ITEM_TYPE</name>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -1194,6 +3125,13 @@
         <rename>ITEM_TYPE_DESC</rename>
       </field>      <field>        <name>PARENT</name>
       </field>      <field>        <name>PARENT_STATUS</name>
+      </field>      <field>        <name>DISCIPLINE</name>
+      </field>      <field>        <name>WBS_FABRICATION_ACTIVITY</name>
+      </field>      <field>        <name>FREE1</name>
+      </field>      <field>        <name>FREE2</name>
+      </field>      <field>        <name>FREE3</name>
+      </field>      <field>        <name>NOTES</name>
+      </field>      <field>        <name>ITEM_TYPE</name>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -1210,6 +3148,126 @@
     </step>
 
   <step>
+    <name>Replace in string</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>BP_TAG_NUMBER</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>&#x2010;</replace_string>
+        <replace_by_string>-</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>BP_TAG_NUMBER</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>&#xa0;</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>208</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Replace in string &#x28;Parent tag void&#x2f;deleted&#x29;</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Remarks</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>VOID&#x2f;DELETED</replace_string>
+        <replace_by_string>PARENT TAG VOID&#x2f;DELETED</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>yes</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Remarks</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>CTDB</replace_string>
+        <replace_by_string>PARENT TAG VOID&#x2f;DELETED</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>yes</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Remarks</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>MTR</replace_string>
+        <replace_by_string>PARENT TAG VOID&#x2f;DELETED</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>yes</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Remarks</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>CLEAN</replace_string>
+        <replace_by_string>PARENT TAG VOID&#x2f;DELETED</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>yes</case_sensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2256</xloc>
+      <yloc>1248</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Select Values &#x28;Item List&#x29;</name>
     <type>SelectValues</type>
     <description/>
@@ -1220,14 +3278,20 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>BP Tag Number</name>
-      </field>      <field>        <name>Comm ID &#x2f; MC ID</name>
-      </field>      <field>        <name>Subsystem</name>
-      </field>      <field>        <name>System</name>
-      </field>      <field>        <name>IS Tag</name>
-      </field>      <field>        <name>Item Type Description</name>
-      </field>      <field>        <name>Discipline</name>
-      </field>      <field>        <name>Item Code Description</name>
+    <fields>      <field>        <name>BP_TAG_NUMBER</name>
+      </field>      <field>        <name>ITEM_CODE</name>
+      </field>      <field>        <name>SUBSYSTEM</name>
+      </field>      <field>        <name>SYSTEM</name>
+      </field>      <field>        <name>IS_TAG</name>
+      </field>      <field>        <name>ITEM_TYPE_DESCRIPTION</name>
+      </field>      <field>        <name>DISCIPLINE</name>
+      </field>      <field>        <name>ITEM_CODE_DESCRIPTION</name>
+      </field>      <field>        <name>NOTES</name>
+      </field>      <field>        <name>FREE1</name>
+      </field>      <field>        <name>FREE2</name>
+      </field>      <field>        <name>FREE3</name>
+      </field>      <field>        <name>WBS_FABRICATION_ACTIVITY</name>
+      </field>      <field>        <name>ITEM_TYPE</name>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -1244,10 +3308,304 @@
     </step>
 
   <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>Comm_ID&#x2f;MC_ID</name>
+      </field>      <field>        <name>BP_TAG_NUMBER</name>
+      </field>      <field>        <name>SYSTEM</name>
+      </field>      <field>        <name>SUBSYSTEM</name>
+      </field>      <field>        <name>ITEM_CODE_DESC</name>
+      </field>      <field>        <name>ITEM_TYPE_DESC</name>
+      </field>      <field>        <name>PARENT</name>
+      </field>      <field>        <name>PARENT_STATUS</name>
+      </field>      <field>        <name>Remarks</name>
+      </field>      <field>        <name>DISCIPLINE</name>
+      </field>      <field>        <name>WBS_FABRICATION_ACTIVITY</name>
+      </field>      <field>        <name>FREE1</name>
+      </field>      <field>        <name>FREE2</name>
+      </field>      <field>        <name>FREE3</name>
+      </field>      <field>        <name>NOTES</name>
+      </field>      <field>        <name>ITEM_TYPE</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1632</xloc>
+      <yloc>1392</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>Comm_ID&#x2f;MC_ID</name>
+      </field>      <field>        <name>BP_TAG_NUMBER</name>
+      </field>      <field>        <name>SYSTEM</name>
+      </field>      <field>        <name>SUBSYSTEM</name>
+      </field>      <field>        <name>ITEM_CODE_DESC</name>
+      </field>      <field>        <name>ITEM_TYPE_DESC</name>
+      </field>      <field>        <name>PARENT</name>
+      </field>      <field>        <name>PARENT_STATUS</name>
+      </field>      <field>        <name>Remarks</name>
+      </field>      <field>        <name>DISCIPLINE</name>
+      </field>      <field>        <name>WBS_FABRICATION_ACTIVITY</name>
+      </field>      <field>        <name>FREE1</name>
+      </field>      <field>        <name>FREE2</name>
+      </field>      <field>        <name>FREE3</name>
+      </field>      <field>        <name>NOTES</name>
+      </field>      <field>        <name>ITEM_TYPE</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1456</xloc>
+      <yloc>1248</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values 3</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>Comm_ID&#x2f;MC_ID</name>
+      </field>      <field>        <name>BP_TAG_NUMBER</name>
+      </field>      <field>        <name>SYSTEM</name>
+      </field>      <field>        <name>SUBSYSTEM</name>
+      </field>      <field>        <name>ITEM_CODE_DESC</name>
+      </field>      <field>        <name>ITEM_TYPE_DESC</name>
+      </field>      <field>        <name>PARENT</name>
+      </field>      <field>        <name>PARENT_STATUS</name>
+      </field>      <field>        <name>Remarks</name>
+      </field>      <field>        <name>DISCIPLINE</name>
+      </field>      <field>        <name>WBS_FABRICATION_ACTIVITY</name>
+      </field>      <field>        <name>FREE1</name>
+      </field>      <field>        <name>FREE2</name>
+      </field>      <field>        <name>FREE3</name>
+      </field>      <field>        <name>NOTES</name>
+      </field>      <field>        <name>ITEM_TYPE</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2944</xloc>
+      <yloc>672</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values 3 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>Comm_ID&#x2f;MC_ID</name>
+      </field>      <field>        <name>BP_TAG_NUMBER</name>
+      </field>      <field>        <name>SYSTEM</name>
+      </field>      <field>        <name>SUBSYSTEM</name>
+      </field>      <field>        <name>ITEM_CODE_DESC</name>
+      </field>      <field>        <name>ITEM_TYPE_DESC</name>
+      </field>      <field>        <name>PARENT</name>
+      </field>      <field>        <name>PARENT_STATUS</name>
+      </field>      <field>        <name>Remarks</name>
+      </field>      <field>        <name>DISCIPLINE</name>
+      </field>      <field>        <name>WBS_FABRICATION_ACTIVITY</name>
+      </field>      <field>        <name>FREE1</name>
+      </field>      <field>        <name>FREE2</name>
+      </field>      <field>        <name>FREE3</name>
+      </field>      <field>        <name>NOTES</name>
+      </field>      <field>        <name>ITEM_TYPE</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2608</xloc>
+      <yloc>592</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values 4</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>Comm_ID&#x2f;MC_ID</name>
+      </field>      <field>        <name>BP_TAG_NUMBER</name>
+      </field>      <field>        <name>SYSTEM</name>
+      </field>      <field>        <name>SUBSYSTEM</name>
+      </field>      <field>        <name>ITEM_CODE_DESC</name>
+      </field>      <field>        <name>ITEM_TYPE_DESC</name>
+      </field>      <field>        <name>PARENT</name>
+      </field>      <field>        <name>PARENT_STATUS</name>
+      </field>      <field>        <name>Remarks</name>
+      </field>      <field>        <name>DISCIPLINE</name>
+      </field>      <field>        <name>ITEM_TYPE</name>
+      </field>      <field>        <name>WBS_FABRICATION_ACTIVITY</name>
+      </field>      <field>        <name>NOTES</name>
+      </field>      <field>        <name>FREE1</name>
+      </field>      <field>        <name>FREE2</name>
+      </field>      <field>        <name>FREE3</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1344</xloc>
+      <yloc>1392</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values 5</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>Comm_ID&#x2f;MC_ID</name>
+      </field>      <field>        <name>BP_TAG_NUMBER</name>
+      </field>      <field>        <name>SYSTEM</name>
+      </field>      <field>        <name>SUBSYSTEM</name>
+      </field>      <field>        <name>ITEM_CODE_DESC</name>
+      </field>      <field>        <name>ITEM_TYPE_DESC</name>
+      </field>      <field>        <name>PARENT</name>
+      </field>      <field>        <name>PARENT_STATUS</name>
+      </field>      <field>        <name>DISCIPLINE</name>
+      </field>      <field>        <name>Remarks</name>
+      </field>      <field>        <name>WBS_FABRICATION_ACTIVITY</name>
+      </field>      <field>        <name>NOTES</name>
+      </field>      <field>        <name>FREE1</name>
+      </field>      <field>        <name>FREE2</name>
+      </field>      <field>        <name>FREE3</name>
+      </field>      <field>        <name>ITEM_TYPE</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1808</xloc>
+      <yloc>912</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values 6</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>Comm_ID&#x2f;MC_ID</name>
+      </field>      <field>        <name>BP_TAG_NUMBER</name>
+      </field>      <field>        <name>SYSTEM</name>
+      </field>      <field>        <name>SUBSYSTEM</name>
+      </field>      <field>        <name>ITEM_CODE_DESC</name>
+      </field>      <field>        <name>ITEM_TYPE_DESC</name>
+      </field>      <field>        <name>PARENT</name>
+      </field>      <field>        <name>PARENT_STATUS</name>
+      </field>      <field>        <name>DISCIPLINE</name>
+      </field>      <field>        <name>Remarks</name>
+      </field>      <field>        <name>WBS_FABRICATION_ACTIVITY</name>
+      </field>      <field>        <name>NOTES</name>
+      </field>      <field>        <name>FREE1</name>
+      </field>      <field>        <name>FREE2</name>
+      </field>      <field>        <name>FREE3</name>
+      </field>      <field>        <name>ITEM_TYPE</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2224</xloc>
+      <yloc>672</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Sort row</name>
     <type>SortRows</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -1295,8 +3653,348 @@
       </output>
     </remotesteps>
     <GUI>
+      <xloc>1248</xloc>
+      <yloc>1392</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>UnitSequence</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2336</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows 2</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>UnitSequence</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2208</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows 3</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>BP_TAG_NUMBER</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2480</xloc>
+      <yloc>672</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Split Fields</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+   <splitfield>BP_TAG_NUMBER_COPY</splitfield>
+   <delimiter>-</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>Unit</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>10</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>Tag_Code</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>10</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>Sequence</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>10</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>Cable_Tag</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>10</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>1456</xloc>
-      <yloc>352</yloc>
+      <yloc>1008</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Split Fields 2</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+   <splitfield>BP_TAG_NUMBER_COPY</splitfield>
+   <delimiter>-</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>Unit</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>Loop_Code</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>Sequence</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1920</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Split Fields 2 2</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+   <splitfield>LOOP_NAME_COPY</splitfield>
+   <delimiter>-</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>Unit</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>Loop_Code</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>Sequence</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2496</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1362,6 +4060,38 @@
           <column_name>PARENT_STATUS</column_name>
           <stream_name>PARENT_STATUS</stream_name>
         </field>
+        <field>
+          <column_name>REMARKS</column_name>
+          <stream_name>Remarks</stream_name>
+        </field>
+        <field>
+          <column_name>DISCIPLINE</column_name>
+          <stream_name>DISCIPLINE</stream_name>
+        </field>
+        <field>
+          <column_name>ITEM_TYPE</column_name>
+          <stream_name>ITEM_TYPE</stream_name>
+        </field>
+        <field>
+          <column_name>WBS_FABRICATION_ACTIVITY</column_name>
+          <stream_name>WBS_FABRICATION_ACTIVITY</stream_name>
+        </field>
+        <field>
+          <column_name>NOTES</column_name>
+          <stream_name>NOTES</stream_name>
+        </field>
+        <field>
+          <column_name>FREE1</column_name>
+          <stream_name>FREE1</stream_name>
+        </field>
+        <field>
+          <column_name>FREE2</column_name>
+          <stream_name>FREE2</stream_name>
+        </field>
+        <field>
+          <column_name>FREE3</column_name>
+          <stream_name>FREE3</stream_name>
+        </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -1371,8 +4101,72 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1456</xloc>
-      <yloc>448</yloc>
+      <xloc>1248</xloc>
+      <yloc>1504</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>TXN_DACS_VALIDATION</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>SQLServer</connection>
+    <sql>select &#x2a; from TXN_DACS_VALIDATION</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>96</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Table input &#x28;Loop_Name&#x29;</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>SQLServer</connection>
+    <sql>select distinct&#x28;loop_name&#x29;, status from txn_instrument_index where loop_name &#x3c;&#x3e; &#x27;&#x27;&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2768</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1389,7 +4183,7 @@
       <schema_name/>
     </partitioning>
     <connection>SQLServer</connection>
-    <sql>SELECT &#x2a;&#xd;&#xa;FROM TXN_DACS_SUB_ITEM_LIST&#xd;&#xa;</sql>
+    <sql>SELECT&#xd;&#xa;  PROJECT_CODE&#xd;&#xa;, SUB_ITEM_CODE&#xd;&#xa;, SUB_ITEM_DESCRIPTION&#xd;&#xa;, SUB_ITEM_TYPE&#xd;&#xa;, LINKED_ITEM_CODE&#xd;&#xa;, NOTES&#xd;&#xa;, FREE1&#xd;&#xa;, FREE2&#xd;&#xa;, FREE3&#xd;&#xa;, ADDITIONAL_DATA&#xd;&#xa;, &#x22;RESULT&#x22;&#xd;&#xa;, &#x27;&#x27; as &#x27;DISCIPLINE&#x27;&#xd;&#xa;, &#x27;&#x27; as &#x27;WBS_FABRICATION_ACTIVITY&#x27;&#xd;&#xa;FROM TXN_DACS_SUB_ITEM_LIST&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1403,8 +4197,103 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>160</xloc>
+      <xloc>96</xloc>
       <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Unique rows</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <count_rows>N</count_rows>
+      <count_field/>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>BP_TAG_NUMBER</name>
+        <case_insensitive>N</case_insensitive>
+        </field>      </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2320</xloc>
+      <yloc>672</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>VOID Criteria</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>SQLServer</connection>
+    <sql>select distinct&#x28;tag_number&#x29; as tag_number from VW_ALL_TAG_UNUSED where sources &#x3d; &#x27;VOID LIVE CTDB&#x27;&#xd;&#xa;union all&#xd;&#xa;select tag_number from CTDB_TAGS where TAG_STATUS &#x3d; &#x27;VOID&#x27; and tag_number not in &#x28;select distinct&#x28;tag_number&#x29; as tag_number from VW_ALL_TAG_UNUSED where sources &#x3d; &#x27;VOID LIVE CTDB&#x27;&#x29;&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1232</xloc>
+      <yloc>496</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Void&#x2f;Deleted</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>SQLServer</connection>
+    <sql>select distinct&#x28;tag_number&#x29; as tag_number from VW_ALL_TAG_UNUSED where sources &#x3d; &#x27;VOID LIVE CTDB&#x27;&#xd;&#xa;union all&#xd;&#xa;select tag_number from CTDB_TAGS where TAG_STATUS &#x3d; &#x27;VOID&#x27; and tag_number not in &#x28;select distinct&#x28;tag_number&#x29; as tag_number from VW_ALL_TAG_UNUSED where sources &#x3d; &#x27;VOID LIVE CTDB&#x27;&#x29;&#xd;&#xa;union all&#xd;&#xa;select distinct&#x28;tag_number&#x29; from VW_ALL_TAG_UNUSED where sources in &#x28;&#x27;DELETED MTR&#x27;, &#x27;TAGS DEL&#x27;&#x29; and tag_number not in &#x28;select distinct&#x28;tag_number&#x29; as tag_number from VW_ALL_TAG_UNUSED where sources &#x3d; &#x27;VOID LIVE CTDB&#x27;&#xd;&#xa;union all&#xd;&#xa;select tag_number from CTDB_TAGS where TAG_STATUS &#x3d; &#x27;VOID&#x27; and tag_number not in &#x28;select distinct&#x28;tag_number&#x29; as tag_number from VW_ALL_TAG_UNUSED where sources &#x3d; &#x27;VOID LIVE CTDB&#x27;&#x29;&#x29;&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1632</xloc>
+      <yloc>1248</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1435,6 +4324,21 @@
       <grouping_symbol/>
       <currency_symbol/>
     </calculation>
+    <calculation>
+      <field_name>ITEM_TYPE</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>SUB_ITEM_TYPE</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1445,356 +4349,6 @@
     <GUI>
       <xloc>672</xloc>
       <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>dacs list</name>
-    <type>ExcelInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <header>Y</header>
-    <noempty>Y</noempty>
-    <stoponempty>N</stoponempty>
-    <filefield/>
-    <sheetfield/>
-    <sheetrownumfield/>
-    <rownumfield/>
-    <sheetfield/>
-    <filefield/>
-    <limit>0</limit>
-    <encoding/>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <accept_filenames>N</accept_filenames>
-    <accept_field/>
-    <accept_stepname/>
-    <file>
-      <name>&#x5c;&#x5c;psssva05&#x5c;jakarta&#x5c;PROJECT&#x5c;BP_TANGGUH_EXPANSION_PROJECT_OFFSHORE&#x5c;16.SHARE FOLDER&#x5c;DATA MANAGEMENT&#x5c;DACS&#x5c;INTERFACE&#x5c;DACS_LIST_MAPPING.xls</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>Project Code</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Comm ID &#x2f; MC ID</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Item Code Description</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Item Type</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Item Type Description</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Discipline</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Area</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Vendor</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>BP Tag Number</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>IS Tag</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>System</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Subsystem</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Main Item &#x2f; Package</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Main Item &#x2f; Package description</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Quantity</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>UM</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Reference Design Documents</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>WBS Fabrication Activity</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Bill Item</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Notes</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Free1</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Free2</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Free3</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-    </fields>
-    <sheets>
-      <sheet>
-        <name>ITEMLIST</name>
-        <startrow>0</startrow>
-        <startcol>0</startcol>
-        </sheet>
-    </sheets>
-    <strict_types>N</strict_types>
-    <error_ignored>N</error_ignored>
-    <error_line_skipped>N</error_line_skipped>
-    <bad_line_files_destination_directory/>
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory/>
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory/>
-    <line_number_files_extension>line</line_number_files_extension>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
-    <spreadsheet_type>JXL</spreadsheet_type>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>160</xloc>
-      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1814,6 +4368,12 @@
       </field>      <field>        <name>LINKED_ITEM_CODE</name>
       </field>      <field>        <name>SUB_ITEM_DESCRIPTION</name>
       </field>      <field>        <name>SUB_ITEM_TYPE</name>
+      </field>      <field>        <name>WBS_FABRICATION_ACTIVITY</name>
+      </field>      <field>        <name>DISCIPLINE</name>
+      </field>      <field>        <name>FREE1</name>
+      </field>      <field>        <name>FREE2</name>
+      </field>      <field>        <name>FREE3</name>
+      </field>      <field>        <name>NOTES</name>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -1823,13 +4383,170 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>320</xloc>
+      <xloc>384</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
+  <step>
+    <name>preview</name>
+    <type>ExcelOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <encoding/>
+    <append>N</append>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>D&#x3a;&#x5c;DACS&#x5c;preview</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <create_parent_folder>N</create_parent_folder>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <sheetname>Sheet1</sheetname>
+      <autosizecolums>N</autosizecolums>
+      <nullisblank>N</nullisblank>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <splitevery>0</splitevery>
+      <usetempfiles>N</usetempfiles>
+      <tempdirectory/>
+      </file>
+    <template>
+      <enabled>N</enabled>
+      <append>N</append>
+      <filename>template.xls</filename>
+    </template>
+    <fields>
+    </fields>
+    <custom>
+    <header_font_name>arial</header_font_name>
+    <header_font_size>10</header_font_size>
+    <header_font_bold>N</header_font_bold>
+    <header_font_italic>N</header_font_italic>
+    <header_font_underline>no</header_font_underline>
+    <header_font_orientation>horizontal</header_font_orientation>
+    <header_font_color>black</header_font_color>
+    <header_background_color>none</header_background_color>
+    <header_row_height>255</header_row_height>
+    <header_alignment>left</header_alignment>
+    <header_image/>
+    <row_font_name>arial</row_font_name>
+    <row_font_size>10</row_font_size>
+    <row_font_color>black</row_font_color>
+    <row_background_color>none</row_background_color>
+      </custom>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1360</xloc>
+      <yloc>912</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
   <step_error_handling>
+      <error>
+        <source_step>Data Validator</source_step>
+        <target_step>Invalid Tag</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename/>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+      <error>
+        <source_step>Data Validator 2</source_step>
+        <target_step>Data Validator 2 2</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename/>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+      <error>
+        <source_step>Data Validator 2 2</source_step>
+        <target_step>Data Validator 2 3</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename/>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+      <error>
+        <source_step>Data Validator 2 3</source_step>
+        <target_step>Add constants MTR</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename/>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+      <error>
+        <source_step>Data Validator 2 4</source_step>
+        <target_step>Add constants CTDB</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename/>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+      <error>
+        <source_step>Data Validator 2 5</source_step>
+        <target_step>Dummy &#x28;do nothing&#x29; 10</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename/>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+      <error>
+        <source_step>Data Validator 3</source_step>
+        <target_step>Data Validator 2</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename/>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>

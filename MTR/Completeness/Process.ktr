@@ -520,11 +520,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>TXN_MASTER_TAG_REGISTER</from>
-      <to>Dummy &#x28;Preview MTR&#x29;</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Unique rows &#x28;ATT&#x29;</from>
       <to>Group by &#x28;Tag Number&#x29; ATT</to>
       <enabled>Y</enabled>
@@ -537,6 +532,101 @@
     <hop>
       <from>Dummy &#x28;do nothing&#x29; 4</from>
       <to>Attribute requirement mtr out</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>TXN_MASTER_TAG_REGISTER</from>
+      <to>Data Validator</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator</from>
+      <to>Dummy &#x28;Preview MTR&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Validator</from>
+      <to>Dummy &#x28;do nothing&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29;</from>
+      <to>Lookup &#x28;Att Functional_Physical&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter requirement is null</from>
+      <to>Remove column</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Remove column</from>
+      <to>Dummy &#x28;Preview MTR&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter requirement is null</from>
+      <to>reshape column</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>reshape column</from>
+      <to>Preview lookup &#x28;ATT&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Lookup &#x28;Att Functional_Physical&#x29;</from>
+      <to>Sort physical class</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort physical class</from>
+      <to>Join Physical requirement</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Physical_requirement</from>
+      <to>Sort physical requirement</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort physical requirement</from>
+      <to>Join Physical requirement</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Filter requirement is null</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Functional_requirement</from>
+      <to>Sort functional req</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort functional req</from>
+      <to>Merge Join 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Join Physical requirement</from>
+      <to>Sort merge</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort merge</from>
+      <to>Merge Join 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Merge Join 2</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Duplicate Physical</from>
+      <to>Data Validator</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -628,7 +718,7 @@
       <name>file</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
       <extention>txt</extention>
       <append>N</append>
       <split>N</split>
@@ -688,6 +778,83 @@
     </step>
 
   <step>
+    <name>Data Validator</name>
+    <type>Validator</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<validate_all>N</validate_all>
+<concat_errors>N</concat_errors>
+<concat_separator>&#x7c;</concat_separator>
+       <validator_field><name>PHYSICAL_CLASS</name>
+<validation_name>Physical</validation_name>
+<max_length/>
+<min_length/>
+<null_allowed>Y</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>String</data_type>
+<data_type_verified>N</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description/>
+<is_sourcing_values>Y</is_sourcing_values>
+<sourcing_step>Duplicate Physical</sourcing_step>
+<sourcing_field>class_name</sourcing_field>
+<allowed_value><value>AC ELECTRIC GENERATOR</value>
+<value>AXIAL TURBO EXPANDER</value>
+<value>BALL VALVE</value>
+<value>BUTTERFLY VALVE</value>
+<value>CENTRIFUGAL TURBO EXPANDER</value>
+<value>DC ELECTRIC GENERATOR</value>
+<value>DIAPHRAGM VALVE</value>
+<value>DIVERTER VALVE</value>
+<value>ELECTRIC HEATER</value>
+<value>ELECTRICAL PANEL</value>
+<value>EMERGENCY ALARM DEVICE</value>
+<value>GLOBE VALVE</value>
+<value>INDICATOR</value>
+<value>LIQUID FUEL COMBUSTION ENGINE</value>
+<value>LOCAL CONTROL PANEL</value>
+<value>NEEDLE VALVE</value>
+<value>PORTABLE GENERATOR</value>
+<value>PRINTER &#x2f; RECORDER</value>
+<value>SAFETY SHOWER OR EYE BATH</value>
+<value>SENSING ELEMENT</value>
+<value>TELECOMMUNICATION CABINET</value>
+<value>TOWER CRANE</value>
+<value>TRACE HEATING CIRCUIT</value>
+</allowed_value></validator_field>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>608</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Dummy &#x28;Preview MTR&#x29;</name>
     <type>Dummy</type>
     <description/>
@@ -713,6 +880,31 @@
     </step>
 
   <step>
+    <name>Dummy &#x28;do nothing&#x29;</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>560</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Dummy &#x28;do nothing&#x29; 4</name>
     <type>Dummy</type>
     <description/>
@@ -733,6 +925,73 @@
     <GUI>
       <xloc>2096</xloc>
       <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Filter requirement is null</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<send_true_to>Remove column</send_true_to>
+<send_false_to>reshape column</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>Template2</leftvalue>
+ <function>IS NULL</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1312</xloc>
+      <yloc>352</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Functional_requirement</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>MySQL</connection>
+    <sql>select &#x2a; from attribute_requirement_functional</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1536</xloc>
+      <yloc>672</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -785,6 +1044,42 @@
     <GUI>
       <xloc>2096</xloc>
       <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Join Physical requirement</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<join_type>LEFT OUTER</join_type>
+<step1>Sort physical class</step1>
+<step2>Sort physical requirement</step2>
+    <keys_1>
+      <key>PHYSICAL_CLASS</key>
+      <key>FUNCTIONAL_PHYSICAL</key>
+    </keys_1>
+    <keys_2>
+      <key>CLASS_NAME</key>
+      <key>FUNCTIONAL_PHYSICAL</key>
+    </keys_2>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1312</xloc>
+      <yloc>672</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -850,6 +1145,60 @@
     </step>
 
   <step>
+    <name>Lookup &#x28;Att Functional_Physical&#x29;</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>MySQL</connection>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>attribute_requirement_functional</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>FUNCTIONAL_CLASS</name>
+        <field>CLASS_NAME</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>TAG_CODE</name>
+        <field>TAG_CODE</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>FUNCTIONAL_PHYSICAL</name>
+        <rename>FUNCTIONAL_PHYSICAL</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>560</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Lookup &#x28;Att Physical class&#x29;</name>
     <type>DBLookup</type>
     <description/>
@@ -898,6 +1247,74 @@
     </step>
 
   <step>
+    <name>Merge Join 2</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<join_type>LEFT OUTER</join_type>
+<step1>Sort merge</step1>
+<step2>Sort functional req</step2>
+    <keys_1>
+      <key>FUNCTIONAL_CLASS</key>
+      <key>TAG_CODE</key>
+    </keys_1>
+    <keys_2>
+      <key>CLASS_NAME</key>
+      <key>TAG_CODE</key>
+    </keys_2>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1536</xloc>
+      <yloc>576</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Physical_requirement</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>MySQL</connection>
+    <sql>select &#x2a; from attribute_requirement_physical</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>672</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Preview lookup &#x28;ATT&#x29;</name>
     <type>Dummy</type>
     <description/>
@@ -918,6 +1335,271 @@
     <GUI>
       <xloc>1312</xloc>
       <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Remove column</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>TAG_NUMBER</name>
+      </field>      <field>        <name>FUNCTIONAL_CLASS</name>
+      </field>      <field>        <name>PHYSICAL_CLASS</name>
+      </field>      <field>        <name>TAG_CODE</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>352</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>TAG_NUMBER</name>
+      </field>      <field>        <name>FUNCTIONAL_CLASS</name>
+      </field>      <field>        <name>PHYSICAL_CLASS</name>
+      </field>      <field>        <name>TAG_CODE</name>
+      </field>      <field>        <name>FUNCTIONAL_PHYSICAL</name>
+      </field>      <field>        <name>REQUIREMENT</name>
+        <rename>Template2</rename>
+      </field>      <field>        <name>REQUIREMENT_1</name>
+        <rename>Template1</rename>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1312</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort functional req</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>CLASS_NAME</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>TAG_CODE</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1760</xloc>
+      <yloc>672</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort merge</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>FUNCTIONAL_CLASS</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>TAG_CODE</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1312</xloc>
+      <yloc>576</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort physical class</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>PHYSICAL_CLASS</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>FUNCTIONAL_PHYSICAL</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>560</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort physical requirement</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>CLASS_NAME</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>FUNCTIONAL_PHYSICAL</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>672</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1016,7 +1698,84 @@
     </GUI>
     </step>
 
+  <step>
+    <name>reshape column</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>TAG_NUMBER</name>
+      </field>      <field>        <name>FUNCTIONAL_CLASS</name>
+      </field>      <field>        <name>PHYSICAL_CLASS</name>
+      </field>      <field>        <name>TAG_CODE</name>
+      </field>      <field>        <name>Template1</name>
+      </field>      <field>        <name>FUNCTIONAL_PHYSICAL</name>
+      </field>      <field>        <name>Template2</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1312</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Duplicate Physical</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>MySQL</connection>
+    <sql>select class_name, count&#x28;class_name&#x29; as &#x27;amount&#x27; from attribute_requirement_physical&#xd;&#xa;group by CLASS_NAME HAVING COUNT&#x28;amount&#x29; &#x3e; 1</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
   <step_error_handling>
+      <error>
+        <source_step>Data Validator</source_step>
+        <target_step>Dummy &#x28;Preview MTR&#x29;</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename/>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>

@@ -490,7 +490,7 @@
   </connection>
   <order>
     <hop>
-      <from>Table input</from>
+      <from>Table input &#x28;TXN_DACS_OUTPUT&#x29;</from>
       <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
@@ -990,7 +990,7 @@
     </step>
 
   <step>
-    <name>Table input</name>
+    <name>Table input &#x28;TXN_DACS_OUTPUT&#x29;</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>

@@ -487,6 +487,11 @@
       <to>Group by</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29;</from>
+      <to>Document Number Wrong &#x28;excel&#x29; 2</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>Abort</name>
@@ -512,6 +517,111 @@
     <GUI>
       <xloc>544</xloc>
       <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Document Number &#x28;MTR&#x29;</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>SQLServer</connection>
+    <sql>select MIS.TAG_NUMBER, MIS.ATTRIBUTE_NAME, MIS.ATTRIBUTE_VALUE, MIS.ATTRIBUTE_VALIDATION_STATUS,dbo.Funct_GetPOFullText&#x28;dbo.Funct_GetSplitText&#x28;MIS.ATTRIBUTE_VALUE, &#x27;-&#x27;, 2&#x29;&#x29; AS PO_DOCUMENT,&#xd;&#xa;MTR.&#x5b;3131&#x5d; AS PO_NUMBER_IN_MTRDB, MTR.&#x5b;3133&#x5d; AS SERVICE_DESCRIPTION, MTR.TOOLS_SPI, MTR.TOOLS_S3D, MTR.TOOLS_SPPID, MTR.TEMPLATE_ACTUAL&#xd;&#xa;from TXN_CTDB_MISSING MIS&#xd;&#xa;LEFT OUTER JOIN TXN_MASTER_TAG_REGISTER MTR &#xd;&#xa;ON MIS.TAG_NUMBER &#x3d; MTR.TAG_NUMBER&#xd;&#xa;WHERE MIS.ATTRIBUTE_VALIDATION_STATUS LIKE &#x27;&#x25;DATA VALID&#x25;&#x27; AND MIS.ATTRIBUTE_VALUE like &#x27;TEP-&#x25;&#x27; &#xd;&#xa;and dbo.Funct_GetSplitText&#x28;MIS.ATTRIBUTE_VALUE, &#x27;-&#x27;, 2&#x29; NOT IN &#x28;017,2300,2400,9001&#x29;&#xd;&#xa;and dbo.Funct_GetSplitText&#x28;MIS.ATTRIBUTE_VALUE, &#x27;-&#x27;, 2&#x29; &#x3c;&#x3e; dbo.Funct_GetSplitText&#x28;MTR.&#x5b;3131&#x5d;, &#x27;-&#x27;, 1&#x29;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Document Number Wrong &#x28;excel&#x29;</name>
+    <type>ExcelOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <encoding/>
+    <append>Y</append>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>&#x5c;&#x5c;psssva020&#x5c;DSR&#x5c;TEP_GPF&#x5c;DATA_MANAGEMENT&#x5c;Brilliant&#x5c;SRT Pentaho&#x5c;Document_number_wrong</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <create_parent_folder>N</create_parent_folder>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <sheetname>List Tags</sheetname>
+      <autosizecolums>Y</autosizecolums>
+      <nullisblank>N</nullisblank>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <splitevery>0</splitevery>
+      <usetempfiles>N</usetempfiles>
+      <tempdirectory/>
+      </file>
+    <template>
+      <enabled>N</enabled>
+      <append>N</append>
+      <filename>template.xls</filename>
+    </template>
+    <fields>
+    </fields>
+    <custom>
+    <header_font_name>arial</header_font_name>
+    <header_font_size>10</header_font_size>
+    <header_font_bold>N</header_font_bold>
+    <header_font_italic>N</header_font_italic>
+    <header_font_underline>no</header_font_underline>
+    <header_font_orientation>horizontal</header_font_orientation>
+    <header_font_color>black</header_font_color>
+    <header_background_color>none</header_background_color>
+    <header_row_height>255</header_row_height>
+    <header_alignment>left</header_alignment>
+    <header_image/>
+    <row_font_name>arial</row_font_name>
+    <row_font_size>10</row_font_size>
+    <row_font_color>black</row_font_color>
+    <row_background_color>none</row_background_color>
+      </custom>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>640</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -620,7 +730,7 @@
     </step>
 
   <step>
-    <name>Document Number Wrong &#x28;excel&#x29;</name>
+    <name>Document Number Wrong &#x28;excel&#x29; 2</name>
     <type>ExcelOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -636,7 +746,7 @@
     <append>Y</append>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>&#x5c;&#x5c;psssva020&#x5c;DSR&#x5c;TEP_GPF&#x5c;DATA_MANAGEMENT&#x5c;Brilliant&#x5c;SRT Pentaho&#x5c;Document_number_wrong</name>
+      <name>&#x5c;&#x5c;psssva020&#x5c;DSR&#x5c;TEP_GPF&#x5c;DATA_MANAGEMENT&#x5c;BI SOURCE&#x5c;ALL SOURCE&#x5c;Document_number_wrong</name>
       <extention>xls</extention>
       <do_not_open_newfile_init>Y</do_not_open_newfile_init>
       <create_parent_folder>N</create_parent_folder>
@@ -687,39 +797,7 @@
     </remotesteps>
     <GUI>
       <xloc>640</xloc>
-      <yloc>192</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Document Number &#x28;MTR&#x29;</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>SQLServer</connection>
-    <sql>select MIS.TAG_NUMBER, MIS.ATTRIBUTE_NAME, MIS.ATTRIBUTE_VALUE, MIS.ATTRIBUTE_VALIDATION_STATUS,dbo.Funct_GetPOFullText&#x28;dbo.Funct_GetSplitText&#x28;MIS.ATTRIBUTE_VALUE, &#x27;-&#x27;, 2&#x29;&#x29; AS PO_DOCUMENT,&#xd;&#xa;MTR.&#x5b;3131&#x5d; AS PO_NUMBER_IN_MTRDB, MTR.&#x5b;3133&#x5d; AS SERVICE_DESCRIPTION, MTR.TOOLS_SPI, MTR.TOOLS_S3D, MTR.TOOLS_SPPID, MTR.TEMPLATE_ACTUAL&#xd;&#xa;from TXN_CTDB_MISSING MIS&#xd;&#xa;LEFT OUTER JOIN TXN_MASTER_TAG_REGISTER MTR &#xd;&#xa;ON MIS.TAG_NUMBER &#x3d; MTR.TAG_NUMBER&#xd;&#xa;WHERE MIS.ATTRIBUTE_VALIDATION_STATUS LIKE &#x27;&#x25;DATA VALID&#x25;&#x27; AND MIS.ATTRIBUTE_VALUE like &#x27;TEP-&#x25;&#x27; &#xd;&#xa;and dbo.Funct_GetSplitText&#x28;MIS.ATTRIBUTE_VALUE, &#x27;-&#x27;, 2&#x29; NOT IN &#x28;017,2300,2400,9001&#x29;&#xd;&#xa;and dbo.Funct_GetSplitText&#x28;MIS.ATTRIBUTE_VALUE, &#x27;-&#x27;, 2&#x29; &#x3c;&#x3e; dbo.Funct_GetSplitText&#x28;MTR.&#x5b;3131&#x5d;, &#x27;-&#x27;, 1&#x29;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>192</xloc>
-      <yloc>192</yloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
