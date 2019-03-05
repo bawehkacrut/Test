@@ -1,0 +1,1379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>Attribute_requirement_load_CSTS</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;</directory>
+    <parameters>
+    </parameters>
+    <log>
+      <trans-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <size_limit_lines/>
+        <interval/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STATUS</id>
+          <enabled>Y</enabled>
+          <name>STATUS</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+          <subject/>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+          <subject/>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+          <subject/>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+          <subject/>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+          <subject/>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+          <subject/>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>STARTDATE</id>
+          <enabled>Y</enabled>
+          <name>STARTDATE</name>
+        </field>
+        <field>
+          <id>ENDDATE</id>
+          <enabled>Y</enabled>
+          <name>ENDDATE</name>
+        </field>
+        <field>
+          <id>LOGDATE</id>
+          <enabled>Y</enabled>
+          <name>LOGDATE</name>
+        </field>
+        <field>
+          <id>DEPDATE</id>
+          <enabled>Y</enabled>
+          <name>DEPDATE</name>
+        </field>
+        <field>
+          <id>REPLAYDATE</id>
+          <enabled>Y</enabled>
+          <name>REPLAYDATE</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>Y</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+        <field>
+          <id>EXECUTING_SERVER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_SERVER</name>
+        </field>
+        <field>
+          <id>EXECUTING_USER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_USER</name>
+        </field>
+        <field>
+          <id>CLIENT</id>
+          <enabled>N</enabled>
+          <name>CLIENT</name>
+        </field>
+      </trans-log-table>
+      <perf-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <interval/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>SEQ_NR</id>
+          <enabled>Y</enabled>
+          <name>SEQ_NR</name>
+        </field>
+        <field>
+          <id>LOGDATE</id>
+          <enabled>Y</enabled>
+          <name>LOGDATE</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STEPNAME</id>
+          <enabled>Y</enabled>
+          <name>STEPNAME</name>
+        </field>
+        <field>
+          <id>STEP_COPY</id>
+          <enabled>Y</enabled>
+          <name>STEP_COPY</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>INPUT_BUFFER_ROWS</id>
+          <enabled>Y</enabled>
+          <name>INPUT_BUFFER_ROWS</name>
+        </field>
+        <field>
+          <id>OUTPUT_BUFFER_ROWS</id>
+          <enabled>Y</enabled>
+          <name>OUTPUT_BUFFER_ROWS</name>
+        </field>
+      </perf-log-table>
+      <channel-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>LOGGING_OBJECT_TYPE</id>
+          <enabled>Y</enabled>
+          <name>LOGGING_OBJECT_TYPE</name>
+        </field>
+        <field>
+          <id>OBJECT_NAME</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_NAME</name>
+        </field>
+        <field>
+          <id>OBJECT_COPY</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_COPY</name>
+        </field>
+        <field>
+          <id>REPOSITORY_DIRECTORY</id>
+          <enabled>Y</enabled>
+          <name>REPOSITORY_DIRECTORY</name>
+        </field>
+        <field>
+          <id>FILENAME</id>
+          <enabled>Y</enabled>
+          <name>FILENAME</name>
+        </field>
+        <field>
+          <id>OBJECT_ID</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_ID</name>
+        </field>
+        <field>
+          <id>OBJECT_REVISION</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_REVISION</name>
+        </field>
+        <field>
+          <id>PARENT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>PARENT_CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>ROOT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>ROOT_CHANNEL_ID</name>
+        </field>
+      </channel-log-table>
+      <step-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STEPNAME</id>
+          <enabled>Y</enabled>
+          <name>STEPNAME</name>
+        </field>
+        <field>
+          <id>STEP_COPY</id>
+          <enabled>Y</enabled>
+          <name>STEP_COPY</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>N</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+      </step-log-table>
+      <metrics-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>METRICS_DATE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_DATE</name>
+        </field>
+        <field>
+          <id>METRICS_CODE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_CODE</name>
+        </field>
+        <field>
+          <id>METRICS_DESCRIPTION</id>
+          <enabled>Y</enabled>
+          <name>METRICS_DESCRIPTION</name>
+        </field>
+        <field>
+          <id>METRICS_SUBJECT</id>
+          <enabled>Y</enabled>
+          <name>METRICS_SUBJECT</name>
+        </field>
+        <field>
+          <id>METRICS_TYPE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_TYPE</name>
+        </field>
+        <field>
+          <id>METRICS_VALUE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_VALUE</name>
+        </field>
+      </metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+    <created_user>-</created_user>
+    <created_date>2017&#x2f;11&#x2f;16 13&#x3a;59&#x3a;24.832</created_date>
+    <modified_user>-</modified_user>
+    <modified_date>2017&#x2f;11&#x2f;16 13&#x3a;59&#x3a;24.832</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+  </notepads>
+  <connection>
+    <name>MySQL_CSTS</name>
+    <server>PSSSVA012</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>TEP_LNG</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7a185a209ab7d8cc2fe8a</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.rewriteBatchedStatements</code><attribute>true</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCompression</code><attribute>true</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>SQLServerCSTS</name>
+    <server>PSSSVA020</server>
+    <type>MSSQL</type>
+    <access>Native</access>
+    <database>TEP_LNG</database>
+    <port>1433</port>
+    <username>csts</username>
+    <password>Encrypted 2be98afc86aa7f287b80dbd228ec3f79b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+    <hop>
+      <from>Tag Attribute Missing</from>
+      <to>Dummy &#x28;do nothing&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Attribute Name</from>
+      <to>Sort Attribute Number</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29;</from>
+      <to>Split Att_missing</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Split Att_missing</from>
+      <to>Sort ATT Missing</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort ATT Missing</from>
+      <to>Merge Attribute name</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort Attribute Number</from>
+      <to>Merge Attribute name</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows</from>
+      <to>preview</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Merge Attribute name</from>
+      <to>Filter rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Sort rows 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 3</from>
+      <to>Add constants</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants</from>
+      <to>TXN_TAGS_ATT_MISSING-OUT</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 2</from>
+      <to>Select values 3</to>
+      <enabled>Y</enabled>
+    </hop>
+  </order>
+  <step>
+    <name>Add constants</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>STATUS</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>MISSING</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1152</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Attribute Name</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Attribute</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Attribute_Name</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <data>
+      <line> <item>109622</item><item>AC&#x2f;DC</item> </line>
+      <line> <item>109879</item><item>ACQUISITION TYPE</item> </line>
+      <line> <item>109865</item><item>ACTUATOR TYPE</item> </line>
+      <line> <item>109624</item><item>ADJUSTABLE</item> </line>
+      <line> <item>109871</item><item>AIR DRYER TYPE</item> </line>
+      <line> <item>34100</item><item>ALARM RESPONSE MANUAL FLAG</item> </line>
+      <line> <item>109869</item><item>ANODE MATERIAL</item> </line>
+      <line> <item>3016</item><item>API &#x2f; ISO REFERENCE</item> </line>
+      <line> <item>3054</item><item>APPLICABLE DESIGN CODE</item> </line>
+      <line> <item>27898</item><item>ATEX EQUIPMENT CATEGORY</item> </line>
+      <line> <item>109867</item><item>BALANCED</item> </line>
+      <line> <item>109632</item><item>BELT TYPE</item> </line>
+      <line> <item>109881</item><item>BETA RATIO</item> </line>
+      <line> <item>109634</item><item>BLADE TYPE</item> </line>
+      <line> <item>34095</item><item>BLOCK DIAGRAM DOC NO</item> </line>
+      <line> <item>109635</item><item>BLOWING MEDIUM</item> </line>
+      <line> <item>109876</item><item>BRIDGE TYPE</item> </line>
+      <line> <item>34038</item><item>BROWNFIELD FLAG</item> </line>
+      <line> <item>109638</item><item>BULB TYPE</item> </line>
+      <line> <item>109641</item><item>BURNER TYPE</item> </line>
+      <line> <item>58592</item><item>BUSINESS FUNCTION</item> </line>
+      <line> <item>135733</item><item>BYPASS FACTOR</item> </line>
+      <line> <item>109644</item><item>CABLE OR CHAIN</item> </line>
+      <line> <item>33382</item><item>CABLE TYPE</item> </line>
+      <line> <item>3018</item><item>CALIBRATED RANGE MAX</item> </line>
+      <line> <item>3019</item><item>CALIBRATED RANGE MIN</item> </line>
+      <line> <item>109882</item><item>CARRIER GAS</item> </line>
+      <line> <item>3142</item><item>CAUSE AND EFFECT DOC NO</item> </line>
+      <line> <item>3020</item><item>CERTIFICATE NUMBER</item> </line>
+      <line> <item>3021</item><item>CERTIFYING AUTHORITY</item> </line>
+      <line> <item>109883</item><item>CHROMATOGRAPH TYPE</item> </line>
+      <line> <item>2971</item><item>COATING-EXTERNAL</item> </line>
+      <line> <item>2972</item><item>COATING-INTERNAL</item> </line>
+      <line> <item>135734</item><item>COEFFICIENT OF PERFORMANCE &#x28;COP&#x29;</item> </line>
+      <line> <item>109884</item><item>COLUMN</item> </line>
+      <line> <item>140495</item><item>COMMISSIONABLE ITEM FLAG</item> </line>
+      <line> <item>3118</item><item>COMMISSIONING SUB SYSTEM NO</item> </line>
+      <line> <item>109885</item><item>COMPUTER TYPE</item> </line>
+      <line> <item>109886</item><item>CONDITIONER TYPE</item> </line>
+      <line> <item>109656</item><item>CONNECTION TYPE</item> </line>
+      <line> <item>109658</item><item>CONTROL TYPE</item> </line>
+      <line> <item>109659</item><item>COOLING CAPACITY</item> </line>
+      <line> <item>3809</item><item>CORROSION ALLOWANCE</item> </line>
+      <line> <item>109660</item><item>COUPLING TYPE</item> </line>
+      <line> <item>27901</item><item>CRITICAL MANUAL VALVE FLAG</item> </line>
+      <line> <item>3026</item><item>CROSS SECTIONAL AREA</item> </line>
+      <line> <item>109873</item><item>CVT TYPE</item> </line>
+      <line> <item>3027</item><item>DENSITY GAS</item> </line>
+      <line> <item>3028</item><item>DENSITY LIQUID</item> </line>
+      <line> <item>135726</item><item>DESIGN &#x28;PURCHASER&#x29; HVAC SCHEMATIC DOC NO</item> </line>
+      <line> <item>3144</item><item>DESIGN &#x28;PURCHASER&#x29; PID DOC NO</item> </line>
+      <line> <item>3029</item><item>DESIGN CAPACITY</item> </line>
+      <line> <item>3638</item><item>DESIGN PRESSURE &#x28;MAX&#x29;</item> </line>
+      <line> <item>37505</item><item>DESIGN PRESSURE &#x28;MAX&#x29; - COLD SIDE</item> </line>
+      <line> <item>37494</item><item>DESIGN PRESSURE &#x28;MAX&#x29; - HOT SIDE</item> </line>
+      <line> <item>3639</item><item>DESIGN PRESSURE &#x28;MIN&#x29;</item> </line>
+      <line> <item>135730</item><item>DESIGN SUPPLY TEMPERATURE</item> </line>
+      <line> <item>3031</item><item>DESIGN TEMPERATURE &#x28;MAX&#x29;</item> </line>
+      <line> <item>37499</item><item>DESIGN TEMPERATURE &#x28;MAX&#x29; - COLD SIDE</item> </line>
+      <line> <item>37488</item><item>DESIGN TEMPERATURE &#x28;MAX&#x29; - HOT SIDE</item> </line>
+      <line> <item>3032</item><item>DESIGN TEMPERATURE &#x28;MIN&#x29;</item> </line>
+      <line> <item>135729</item><item>DETAIL DRAWING &#x28;DUCTING LAYOUT&#x29; DOC NO</item> </line>
+      <line> <item>3159</item><item>DETAIL DRAWING DOC NO</item> </line>
+      <line> <item>109887</item><item>DETECTOR</item> </line>
+      <line> <item>25855</item><item>DEVICE RANGE &#x28;MAX&#x29;</item> </line>
+      <line> <item>25856</item><item>DEVICE RANGE &#x28;MIN&#x29;</item> </line>
+      <line> <item>109888</item><item>DIAGNOSTIC</item> </line>
+      <line> <item>3034</item><item>DIAMETER - OVERALL &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>3167</item><item>DISCIPLINE CODE</item> </line>
+      <line> <item>109671</item><item>DISPLAY TYPE</item> </line>
+      <line> <item>109889</item><item>DIVERTER TYPE</item> </line>
+      <line> <item>109674</item><item>DRIVE BELT TYPE</item> </line>
+      <line> <item>109675</item><item>DRIVE TYPE</item> </line>
+      <line> <item>109677</item><item>DRUM TYPE</item> </line>
+      <line> <item>3036</item><item>EFFICIENCY &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>140496</item><item>END CONNECTION</item> </line>
+      <line> <item>109681</item><item>ENGINE TYPE</item> </line>
+      <line> <item>135731</item><item>ENTERING COIL TEMPERATURE &#x28;&#xb0;C DB&#x2f;WB&#x29;</item> </line>
+      <line> <item>3123</item><item>EQUIPMENT MODEL &#x28;SPEC&#x29;</item> </line>
+      <line> <item>3124</item><item>EQUIPMENT&#x2f;LINE NUMBER</item> </line>
+      <line> <item>3037</item><item>FAILURE ACTION</item> </line>
+      <line> <item>109683</item><item>FAN BELT TYPE</item> </line>
+      <line> <item>109688</item><item>FAN TYPE</item> </line>
+      <line> <item>3172</item><item>FIELD&#x2f;FACILITY</item> </line>
+      <line> <item>109693</item><item>FILTER TYPE</item> </line>
+      <line> <item>3790</item><item>FIRE AREA</item> </line>
+      <line> <item>26435</item><item>FLANGE RATING</item> </line>
+      <line> <item>109850</item><item>FLOW ELEMENT</item> </line>
+      <line> <item>109895</item><item>FLUID TYPE</item> </line>
+      <line> <item>3038</item><item>FRAME SIZE &#x28;MOTOR&#x29;</item> </line>
+      <line> <item>3039</item><item>FROM GLAND SIZE</item> </line>
+      <line> <item>3041</item><item>FROM TAG</item> </line>
+      <line> <item>109890</item><item>FUNCTION TYPE</item> </line>
+      <line> <item>38514</item><item>FUNCTIONAL CLASS NAME</item> </line>
+      <line> <item>3199</item><item>FUTURE FLAG</item> </line>
+      <line> <item>109880</item><item>GAS ANALYSER TYPE</item> </line>
+      <line> <item>109891</item><item>GAS STANDARD UNIT</item> </line>
+      <line> <item>109697</item><item>GASSES DETECTED</item> </line>
+      <line> <item>3139</item><item>GENERAL ARRANGEMENT DOC NO</item> </line>
+      <line> <item>109699</item><item>HANDLE RESET</item> </line>
+      <line> <item>3042</item><item>HAZARDOUS AREA CERT AUTHORITY</item> </line>
+      <line> <item>3047</item><item>HAZARDOUS AREA CLASSIFICATION &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>46723</item><item>HAZARDOUS AREA CLASSIFICATION &#x28;REQUIRED&#x29;</item> </line>
+      <line> <item>3045</item><item>HAZARDOUS AREA GAS GROUP &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>46724</item><item>HAZARDOUS AREA GAS GROUP &#x28;REQUIRED&#x29;</item> </line>
+      <line> <item>3046</item><item>HAZARDOUS AREA PROTECTION &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>46725</item><item>HAZARDOUS AREA PROTECTION &#x28;REQUIRED&#x29;</item> </line>
+      <line> <item>72404</item><item>HAZARDOUS AREA SPECIAL CONDITIONS</item> </line>
+      <line> <item>3048</item><item>HAZARDOUS AREA TEMPERATURE CLASS &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>46726</item><item>HAZARDOUS AREA TEMPERATURE CLASS &#x28;REQUIRED&#x29;</item> </line>
+      <line> <item>109701</item><item>HEATED</item> </line>
+      <line> <item>3049</item><item>HEIGHT - OVERALL &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>3148</item><item>HOOK UP DIAGRAM DOC NO</item> </line>
+      <line> <item>109705</item><item>HUMIDIFIER TYPE</item> </line>
+      <line> <item>135736</item><item>HVAC CALCULATION NO.</item> </line>
+      <line> <item>135735</item><item>HVAC STANDBY PHILOSOPHY</item> </line>
+      <line> <item>3050</item><item>I&#x2f;O TYPE</item> </line>
+      <line> <item>109707</item><item>IMPELLER TYPE</item> </line>
+      <line> <item>109708</item><item>INDICATION TYPE</item> </line>
+      <line> <item>109709</item><item>INERT GAS TYPE</item> </line>
+      <line> <item>3053</item><item>INGRESS PROTECTION &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>109717</item><item>INPUT TYPE</item> </line>
+      <line> <item>109870</item><item>INSTALLATION TYPE</item> </line>
+      <line> <item>109719</item><item>INSULATED</item> </line>
+      <line> <item>3052</item><item>INSULATION CLASS</item> </line>
+      <line> <item>3807</item><item>INSULATION THICKNESS</item> </line>
+      <line> <item>3132</item><item>INTEGRITY LEVEL - SAFETY &#x28;SIL&#x29;</item> </line>
+      <line> <item>33388</item><item>IS CIRCUIT</item> </line>
+      <line> <item>3202</item><item>ISO DOC NO</item> </line>
+      <line> <item>3140</item><item>LAYOUT DIAGRAM DOC NO</item> </line>
+      <line> <item>135732</item><item>LEAVING COIL TEMPERATURE &#x28;&#xb0;C DB&#x2f;WB&#x29;</item> </line>
+      <line> <item>3051</item><item>LENGTH - OVERALL &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>109725</item><item>LINED</item> </line>
+      <line> <item>109917</item><item>LIQUID ANALYSER TYPE</item> </line>
+      <line> <item>109892</item><item>LIQUID STANDARD UNIT</item> </line>
+      <line> <item>3125</item><item>LOCATION &#x28;FACILITY AREA CODE&#x29;</item> </line>
+      <line> <item>3149</item><item>LOOP DIAGRAM DOC NO</item> </line>
+      <line> <item>3126</item><item>LOOP ID</item> </line>
+      <line> <item>3145</item><item>MAIN SINGLE LINE DIAGRAM DOC NO</item> </line>
+      <line> <item>33312</item><item>MAINTENANCE BUILD STATUS</item> </line>
+      <line> <item>3200</item><item>MAINTENANCE HIERARCHY PARENT TAG</item> </line>
+      <line> <item>3161</item><item>MAINTENANCE INSTRUCTION MANUAL DOC NO</item> </line>
+      <line> <item>3127</item><item>MANUFACTURER</item> </line>
+      <line> <item>109916</item><item>MANUFACTURER SUPPORT</item> </line>
+      <line> <item>3058</item><item>MATERIAL &#x28;MAIN&#x29;</item> </line>
+      <line> <item>109735</item><item>MAXIMUM ALLOWABLE WORKING PRESSURE &#x28;MAWP&#x29;</item> </line>
+      <line> <item>109737</item><item>MAXIMUM CURRENT RATING</item> </line>
+      <line> <item>109896</item><item>METER TYPE</item> </line>
+      <line> <item>135724</item><item>MOC REFERENCE</item> </line>
+      <line> <item>3205</item><item>NDE &#x28; RT &#x25;&#x29;</item> </line>
+      <line> <item>3153</item><item>NOISE DATA SHEET</item> </line>
+      <line> <item>109849</item><item>NOMINAL CAPACITANCE</item> </line>
+      <line> <item>3060</item><item>NOMINAL DIAMETER</item> </line>
+      <line> <item>109760</item><item>NUMBER OF POLES</item> </line>
+      <line> <item>3061</item><item>NUMBER OF TERMINALS &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>3162</item><item>OPERATING MANUAL DOC NO</item> </line>
+      <line> <item>3062</item><item>OPERATING MODE &#x28;DUTY &#x2f; STANDBY&#x29;</item> </line>
+      <line> <item>34118</item><item>OPERATING PHILOSOPHY DOC NO</item> </line>
+      <line> <item>3063</item><item>OPERATING PRESSURE</item> </line>
+      <line> <item>3064</item><item>OPERATING PRESSURE &#x28;MAX&#x29;</item> </line>
+      <line> <item>37501</item><item>OPERATING PRESSURE &#x28;MAX&#x29; - COLD SIDE</item> </line>
+      <line> <item>37490</item><item>OPERATING PRESSURE &#x28;MAX&#x29; - HOT SIDE</item> </line>
+      <line> <item>3065</item><item>OPERATING PRESSURE &#x28;MIN&#x29;</item> </line>
+      <line> <item>3066</item><item>OPERATING TEMPERATURE</item> </line>
+      <line> <item>3640</item><item>OPERATING TEMPERATURE &#x28;MAX&#x29;</item> </line>
+      <line> <item>37503</item><item>OPERATING TEMPERATURE &#x28;MAX&#x29; - COLD SIDE</item> </line>
+      <line> <item>37492</item><item>OPERATING TEMPERATURE &#x28;MAX&#x29; - HOT SIDE</item> </line>
+      <line> <item>3641</item><item>OPERATING TEMPERATURE &#x28;MIN&#x29;</item> </line>
+      <line> <item>37504</item><item>OPERATING TEMPERATURE &#x28;MIN&#x29; - COLD SIDE</item> </line>
+      <line> <item>37493</item><item>OPERATING TEMPERATURE &#x28;MIN&#x29; - HOT SIDE</item> </line>
+      <line> <item>109767</item><item>OPERATOR TYPE</item> </line>
+      <line> <item>109768</item><item>ORIENTATION</item> </line>
+      <line> <item>3067</item><item>ORIFICE SIZE</item> </line>
+      <line> <item>58595</item><item>ORIGINATOR CODE</item> </line>
+      <line> <item>109775</item><item>OUTPUT TYPE</item> </line>
+      <line> <item>3070</item><item>OVERLOAD TRIP RATING</item> </line>
+      <line> <item>109777</item><item>OXIDIZER TYPE</item> </line>
+      <line> <item>109897</item><item>PACE BASIS</item> </line>
+      <line> <item>27904</item><item>PAINT CLASS</item> </line>
+      <line> <item>3130</item><item>PARENT TAG</item> </line>
+      <line> <item>135723</item><item>PARENT TAG STRING</item> </line>
+      <line> <item>34355</item><item>PERFORMANCE STANDARD DOC NO</item> </line>
+      <line> <item>3071</item><item>PHASE</item> </line>
+      <line> <item>37455</item><item>PHYSICAL CLASS NAME</item> </line>
+      <line> <item>109898</item><item>PIPE SIZE</item> </line>
+      <line> <item>103573</item><item>PIPING GENERIC TYPE IDENTIFIER</item> </line>
+      <line> <item>44975</item><item>PIPING MATERIAL CODE</item> </line>
+      <line> <item>3164</item><item>PIPING SPEC DATASHEET DOC NO</item> </line>
+      <line> <item>3072</item><item>PIPING SPECIFICATION</item> </line>
+      <line> <item>109784</item><item>PLATE TYPE</item> </line>
+      <line> <item>109785</item><item>POSITION INDICATOR</item> </line>
+      <line> <item>109863</item><item>POSITIONER CAM CHARACTERISTIC</item> </line>
+      <line> <item>109866</item><item>POSITIONER TYPE</item> </line>
+      <line> <item>27905</item><item>POST WELD HEAT TREATMENT &#x28;PWHT&#x29;</item> </line>
+      <line> <item>3073</item><item>POWER CONSUMPTION</item> </line>
+      <line> <item>3074</item><item>POWER FACTOR&#xa0; - COS &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>3075</item><item>POWER OUTPUT RATING &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>3084</item><item>PRESSURE - RATING &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>109787</item><item>PRESSURE RATIO</item> </line>
+      <line> <item>109789</item><item>PRIMARY FUEL</item> </line>
+      <line> <item>3174</item><item>PROCUREMENT PACKAGE ID</item> </line>
+      <line> <item>3154</item><item>PROJECT DATASHEET DOC NO</item> </line>
+      <line> <item>134641</item><item>PROJECT LOCATION IDENTIFIER</item> </line>
+      <line> <item>58593</item><item>PROJECT NAME</item> </line>
+      <line> <item>109899</item><item>PROVER TYPE</item> </line>
+      <line> <item>3131</item><item>PURCHASE ORDER NO</item> </line>
+      <line> <item>109903</item><item>RADIOACTIVE SOURCE</item> </line>
+      <line> <item>3081</item><item>RATED CAPACITY</item> </line>
+      <line> <item>3082</item><item>RATED FLOW</item> </line>
+      <line> <item>109842</item><item>RATED FREQUENCY</item> </line>
+      <line> <item>3083</item><item>RATED POWER</item> </line>
+      <line> <item>109838</item><item>RATED VOLTAGE</item> </line>
+      <line> <item>109904</item><item>RECEIVER TYPE</item> </line>
+      <line> <item>109792</item><item>REFRIGERANT TYPE</item> </line>
+      <line> <item>109875</item><item>RELAY TYPE</item> </line>
+      <line> <item>3085</item><item>RELIEF TEMPERATURE</item> </line>
+      <line> <item>109906</item><item>REMOTE ACCESS</item> </line>
+      <line> <item>33313</item><item>REMOVABLE ITEM FLAG</item> </line>
+      <line> <item>109796</item><item>ROTATION</item> </line>
+      <line> <item>3191</item><item>SAFETY RELATED DEVICE &#x28;SRD&#x29; INDEX FLAG</item> </line>
+      <line> <item>34138</item><item>SAFETY REQUIREMENTS SPECIFICATION DOC NO</item> </line>
+      <line> <item>109907</item><item>SAMPLE CONDITIONER</item> </line>
+      <line> <item>109908</item><item>SAMPLER TYPE</item> </line>
+      <line> <item>109799</item><item>SAMPLING TYPE</item> </line>
+      <line> <item>3156</item><item>SCDE DATASHEET DOC NO</item> </line>
+      <line> <item>3146</item><item>SCHEMATIC DIAGRAM DOC NO</item> </line>
+      <line> <item>109909</item><item>SEAL INDICATOR</item> </line>
+      <line> <item>109803</item><item>SECONDARY FUEL</item> </line>
+      <line> <item>3087</item><item>SEGREGATION LEVEL</item> </line>
+      <line> <item>109805</item><item>SENSOR TYPE</item> </line>
+      <line> <item>39613</item><item>SEQUENCE NUMBER</item> </line>
+      <line> <item>3088</item><item>SERIAL NUMBER</item> </line>
+      <line> <item>26436</item><item>SERVICE CODE</item> </line>
+      <line> <item>3133</item><item>SERVICE DESCRIPTION</item> </line>
+      <line> <item>3089</item><item>SET POINT</item> </line>
+      <line> <item>3090</item><item>SET POINT HIGH</item> </line>
+      <line> <item>3091</item><item>SET POINT HIGH HIGH</item> </line>
+      <line> <item>3092</item><item>SET POINT LOW</item> </line>
+      <line> <item>3093</item><item>SET POINT LOW LOW</item> </line>
+      <line> <item>109910</item><item>SIGNAL</item> </line>
+      <line> <item>3096</item><item>SIGNAL TYPE</item> </line>
+      <line> <item>3163</item><item>SOFTWARE FUNCTION BLOCK DIAGRAM</item> </line>
+      <line> <item>109855</item><item>SPECIFIC GRAVITY</item> </line>
+      <line> <item>24147</item><item>SPECIFICATION DOC NO</item> </line>
+      <line> <item>3165</item><item>SRD DESIGN PHILOSOPHY</item> </line>
+      <line> <item>109915</item><item>STAGE TYPE</item> </line>
+      <line> <item>109911</item><item>STANDARD BASIS</item> </line>
+      <line> <item>109912</item><item>STRAINER</item> </line>
+      <line> <item>3157</item><item>SUPPLIER DATASHEET DOC NO</item> </line>
+      <line> <item>135728</item><item>SUPPLIER DID DOC NO</item> </line>
+      <line> <item>135727</item><item>SUPPLIER HVAC SCHEMATIC DOC NO</item> </line>
+      <line> <item>3147</item><item>SUPPLIER PID DOC NO</item> </line>
+      <line> <item>109820</item><item>SWITCH CONTROL</item> </line>
+      <line> <item>109913</item><item>SWITCH TYPE</item> </line>
+      <line> <item>3098</item><item>SWITCHBOARD CUBICLE DRIVE TYPE</item> </line>
+      <line> <item>3134</item><item>SYSTEM</item> </line>
+      <line> <item>36623</item><item>TAG CODE</item> </line>
+      <line> <item>3135</item><item>TAG CRITICALITY VALUE</item> </line>
+      <line> <item>3767</item><item>TAG FORMAT</item> </line>
+      <line> <item>3198</item><item>TAG MATURITY LEVEL</item> </line>
+      <line> <item>3136</item><item>TAG NUMBER</item> </line>
+      <line> <item>3137</item><item>TAG STATUS &#x28;OPERATIONAL &#x2f; VOID&#x29;</item> </line>
+      <line> <item>135725</item><item>TAG SUFFIX</item> </line>
+      <line> <item>109851</item><item>TEMPERATURE ELEMENT</item> </line>
+      <line> <item>3151</item><item>TERMINATION DIAGRAM DOC NO</item> </line>
+      <line> <item>3099</item><item>TEST MEDIUM</item> </line>
+      <line> <item>3100</item><item>TEST PRESSURE</item> </line>
+      <line> <item>110573</item><item>THERMAL CLASSIFICATION</item> </line>
+      <line> <item>3101</item><item>TO GLAND SIZE</item> </line>
+      <line> <item>3103</item><item>TO TAG</item> </line>
+      <line> <item>3104</item><item>TRACE TEMPERATURE</item> </line>
+      <line> <item>109651</item><item>TRANSFORMER CLASS</item> </line>
+      <line> <item>109864</item><item>TRIM CHARACTERISTICS</item> </line>
+      <line> <item>109835</item><item>TYPE OF CELLS</item> </line>
+      <line> <item>109834</item><item>TYPE OF EXTINGUISHER</item> </line>
+      <line> <item>3107</item><item>VALVE BORE &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>32089</item><item>VALVE CONNECTION TYPE</item> </line>
+      <line> <item>32090</item><item>VALVE OPERATOR TYPE</item> </line>
+      <line> <item>109914</item><item>VALVE PORT</item> </line>
+      <line> <item>32088</item><item>VALVE SEAT MATERIAL</item> </line>
+      <line> <item>3209</item><item>VALVE SPECIFICATION</item> </line>
+      <line> <item>3108</item><item>VALVE STATUS</item> </line>
+      <line> <item>32087</item><item>VALVE TRIM MATERIAL</item> </line>
+      <line> <item>3112</item><item>VISCOSITY &#x28;LIQUID&#x29;</item> </line>
+      <line> <item>3113</item><item>VOLTAGE LEVEL</item> </line>
+      <line> <item>3114</item><item>WEIGHT - DRY &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>3115</item><item>WEIGHT - OPERATING &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>3158</item><item>WEIGHT DATA SHEET</item> </line>
+      <line> <item>3116</item><item>WIDTH - OVERALL &#x28;INSTALLED&#x29;</item> </line>
+      <line> <item>3152</item><item>WIRING DIAGRAM DOC NO</item> </line>
+    </data>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>496</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29;</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>304</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<send_true_to>preview</send_true_to>
+<send_false_to>Select values</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>Attribute_Name</leftvalue>
+ <function>IS NULL</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>912</xloc>
+      <yloc>400</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Merge Attribute name</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<join_type>LEFT OUTER</join_type>
+<step1>Sort ATT Missing</step1>
+<step2>Sort Attribute Number</step2>
+    <keys_1>
+      <key>ATT_MISSING_1</key>
+    </keys_1>
+    <keys_2>
+      <key>Attribute</key>
+    </keys_2>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>736</xloc>
+      <yloc>400</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>TAG_NUMBER</name>
+      </field>      <field>        <name>Attribute</name>
+      </field>      <field>        <name>Attribute_Name</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>912</xloc>
+      <yloc>304</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values 3</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>TAG_NUMBER</name>
+      </field>      <field>        <name>Attribute</name>
+      </field>      <field>        <name>Attribute_Name</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1008</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort ATT Missing</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>ATT_MISSING_1</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>736</xloc>
+      <yloc>304</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort Attribute Number</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Attribute</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>736</xloc>
+      <yloc>496</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows 2</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>TAG_NUMBER</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>Attribute</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>912</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Split Att_missing</name>
+    <type>SplitFieldToRows3</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+   <splitfield>ATT_MISSING</splitfield>
+   <delimiter>,</delimiter>
+   <newfield>ATT_MISSING</newfield>
+   <rownum>N</rownum>
+   <rownum_field/>
+   <resetrownumber>Y</resetrownumber>
+   <delimiter_is_regex>N</delimiter_is_regex>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
+      <yloc>304</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>TXN_TAGS_ATT_MISSING-OUT</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>SQLServerCSTS</connection>
+    <schema/>
+    <table>TXN_TAGS_ATT_MISSING</table>
+    <commit>1000000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>TAG_NUMBER</column_name>
+          <stream_name>TAG_NUMBER</stream_name>
+        </field>
+        <field>
+          <column_name>ATTRIBUTE_NAME</column_name>
+          <stream_name>Attribute_Name</stream_name>
+        </field>
+        <field>
+          <column_name>STATUS</column_name>
+          <stream_name>STATUS</stream_name>
+        </field>
+        <field>
+          <column_name>ATTRIBUTE_ID</column_name>
+          <stream_name>Attribute</stream_name>
+        </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1152</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Tag Attribute Missing</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>MySQL_CSTS</connection>
+    <sql>SELECT&#xd;&#xa;  TAG_NUMBER&#xd;&#xa;, ATT_MISSING&#xd;&#xa;FROM txn_master_tag_register_attribute_percentage&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>304</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>preview</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>912</xloc>
+      <yloc>496</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+  <slave-step-copy-partition-distribution>
+  </slave-step-copy-partition-distribution>
+  <slave_transformation>N</slave_transformation>
+</transformation>
